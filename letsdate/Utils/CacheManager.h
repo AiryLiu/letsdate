@@ -12,14 +12,14 @@
 @interface CacheManager : NSObject
 + (CacheManager*)shareManager;
 
-- (void)cacheLatestCustomer:(NSArray*)customerArray;
-- (void)getCacheLatestCustomer:(void (^)(NSArray*))cacheBlock;
-
-- (void)cacheAllCustomer:(NSArray*)customerArray;
-- (void)getCacheAllCustomer:(void (^)(NSArray*))cacheBlock;
-
-- (void)cacheCommissionRecord:(NSArray*)recordArray;
-- (void)getCacheCommissionRecord:(void (^)(NSArray*))cacheBlock;
+//- (void)cacheLatestCustomer:(NSArray*)customerArray;
+//- (void)getCacheLatestCustomer:(void (^)(NSArray*))cacheBlock;
+//
+//- (void)cacheAllCustomer:(NSArray*)customerArray;
+//- (void)getCacheAllCustomer:(void (^)(NSArray*))cacheBlock;
+//
+//- (void)cacheCommissionRecord:(NSArray*)recordArray;
+//- (void)getCacheCommissionRecord:(void (^)(NSArray*))cacheBlock;
 
 - (void)clearCache;
 @end

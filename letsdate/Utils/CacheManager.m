@@ -8,8 +8,6 @@
 
 #import "CacheManager.h"
 
-#import "JSONKit.h"
-
 #define kLATEST_CUSTOMER_PATH_NAME                      (@"latestcustomer.plist")
 #define kALL_CUSTOMER_PATH_NAME                         (@"allcustomer.plist")
 #define kCOMMISSION_RECORD_PATH_NAME                    (@"commissionrecord.plist")

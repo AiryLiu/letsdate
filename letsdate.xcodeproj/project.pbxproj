@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6023758E1B05E3C000521427 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6023758D1B05E3C000521427 /* UIView+HUD.m */; };
 		60A950B41B005C76008CA32A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A950B31B005C76008CA32A /* Default-568h@2x.png */; };
 		60DFB3111AF8D75300311D3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3101AF8D75300311D3A /* LoginViewController.m */; };
 		60DFB3141AF8D77E00311D3A /* RegisterFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3131AF8D77E00311D3A /* RegisterFirstViewController.m */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6023758C1B05E3C000521427 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
+		6023758D1B05E3C000521427 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
 		60A950B31B005C76008CA32A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		60DFB30F1AF8D75300311D3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		60DFB3101AF8D75300311D3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 				60E6E2491ADE46100026CDC3 /* UIColor+Additions.m */,
 				60E6E24A1ADE46100026CDC3 /* UIViewAdditions.h */,
 				60E6E24B1ADE46100026CDC3 /* UIViewAdditions.m */,
+				6023758C1B05E3C000521427 /* UIView+HUD.h */,
+				6023758D1B05E3C000521427 /* UIView+HUD.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 				60E6E3331ADE65BC0026CDC3 /* MemberViewController.m in Sources */,
 				60E6E2BF1ADE46100026CDC3 /* BaseViewController.m in Sources */,
 				60E6E2B81ADE46100026CDC3 /* UIViewAdditions.m in Sources */,
+				6023758E1B05E3C000521427 /* UIView+HUD.m in Sources */,
 				60E6E3211ADE5B8B0026CDC3 /* LDApiClient.m in Sources */,
 				60E6E32D1ADE65910026CDC3 /* AffairViewController.m in Sources */,
 				60E6E2BE1ADE46100026CDC3 /* KeyChainUtils.m in Sources */,

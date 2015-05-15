@@ -86,8 +86,11 @@
 - (void)queryLogin
 {
     __weak LoginViewController *weakSelf = self;
+    [self.view showHUDLoading:@"加载中"];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // success
+        [weakSelf.view hideHUDLoading];
         
         [AppDelegate swichToMainWindow];
         

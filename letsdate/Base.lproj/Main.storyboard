@@ -114,165 +114,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-Rs-6yj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t8s-h6-nbs">
-                                        <rect key="frame" x="-61" y="-14" width="123" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="8Ya-aP-7db"/>
-                                        </constraints>
-                                        <segments>
-                                            <segment title="最近来访"/>
-                                            <segment title="关注我的"/>
-                                        </segments>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="8Ya-aP-7db"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="8Ya-aP-7db"/>
-                                            </mask>
-                                        </variation>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RXu-vI-Y59">
+                                <rect key="frame" x="16" y="72" width="288" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="BeC-a3-gx9"/>
-                                    <constraint firstItem="t8s-h6-nbs" firstAttribute="leading" secondItem="AnN-Rs-6yj" secondAttribute="leading" constant="45" id="fsT-AH-FwG"/>
-                                    <constraint firstItem="t8s-h6-nbs" firstAttribute="top" secondItem="AnN-Rs-6yj" secondAttribute="top" constant="8" id="gcY-2g-aGW"/>
-                                    <constraint firstAttribute="trailing" secondItem="t8s-h6-nbs" secondAttribute="trailing" constant="45" id="nP5-cm-NXY"/>
+                                    <constraint firstAttribute="height" constant="28" id="jiY-UF-mz3"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="t8s-h6-nbs"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="BeC-a3-gx9"/>
-                                        <exclude reference="fsT-AH-FwG"/>
-                                        <exclude reference="gcY-2g-aGW"/>
-                                        <exclude reference="nP5-cm-NXY"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="t8s-h6-nbs"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="BeC-a3-gx9"/>
-                                        <include reference="fsT-AH-FwG"/>
-                                        <include reference="gcY-2g-aGW"/>
-                                        <include reference="nP5-cm-NXY"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V82-Wv-llp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已有85人看过我 其中5个最新来访" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fM-Ga-VwQ">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.90933370590209961" green="1" blue="0.66510236263275146" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="8fM-Ga-VwQ" secondAttribute="bottom" id="3vq-7o-T8N"/>
-                                    <constraint firstAttribute="height" constant="200" id="DOF-jD-rM2"/>
-                                    <constraint firstItem="8fM-Ga-VwQ" firstAttribute="leading" secondItem="V82-Wv-llp" secondAttribute="leading" id="NsX-al-VSo"/>
-                                    <constraint firstItem="8fM-Ga-VwQ" firstAttribute="top" secondItem="V82-Wv-llp" secondAttribute="top" id="XKj-wB-btT"/>
-                                    <constraint firstAttribute="trailing" secondItem="8fM-Ga-VwQ" secondAttribute="trailing" id="g3J-Ow-DtB"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="8fM-Ga-VwQ"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <exclude reference="DOF-jD-rM2"/>
-                                        <exclude reference="3vq-7o-T8N"/>
-                                        <exclude reference="NsX-al-VSo"/>
-                                        <exclude reference="XKj-wB-btT"/>
-                                        <exclude reference="g3J-Ow-DtB"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="8fM-Ga-VwQ"/>
-                                    </mask>
-                                    <mask key="constraints">
-                                        <include reference="DOF-jD-rM2"/>
-                                        <include reference="3vq-7o-T8N"/>
-                                        <include reference="NsX-al-VSo"/>
-                                        <include reference="XKj-wB-btT"/>
-                                        <include reference="g3J-Ow-DtB"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqS-w1-dhz">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.62745098040000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="开通VIP会员">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="45" y="337" width="310" height="50"/>
-                                </variation>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(开通VIP会员可查看最近来访列表)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyh-fo-TRU">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="45" y="395" width="310" height="21"/>
-                                </variation>
-                            </label>
+                                <segments>
+                                    <segment title="最近来访"/>
+                                    <segment title="关注我的"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AnN-Rs-6yj" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="-16" id="2j3-pE-ymc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AnN-Rs-6yj" secondAttribute="trailing" constant="-16" id="3mz-dh-XvK"/>
-                            <constraint firstItem="AnN-Rs-6yj" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="8HG-cx-Vqz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V82-Wv-llp" secondAttribute="trailing" constant="29" id="Pie-SW-OYg"/>
-                            <constraint firstItem="V82-Wv-llp" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="29" id="cNo-6o-gJZ"/>
-                            <constraint firstItem="V82-Wv-llp" firstAttribute="top" secondItem="AnN-Rs-6yj" secondAttribute="bottom" constant="8" id="zNq-19-KMa"/>
+                            <constraint firstItem="RXu-vI-Y59" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="WYY-4a-vaJ"/>
+                            <constraint firstItem="RXu-vI-Y59" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="eDz-Ya-gDc"/>
+                            <constraint firstItem="RXu-vI-Y59" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="gBy-7Q-DtX"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="AnN-Rs-6yj"/>
-                                <exclude reference="V82-Wv-llp"/>
-                                <exclude reference="KqS-w1-dhz"/>
-                                <exclude reference="gyh-fo-TRU"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="2j3-pE-ymc"/>
-                                <exclude reference="3mz-dh-XvK"/>
-                                <exclude reference="8HG-cx-Vqz"/>
-                                <exclude reference="Pie-SW-OYg"/>
-                                <exclude reference="cNo-6o-gJZ"/>
-                                <exclude reference="zNq-19-KMa"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="AnN-Rs-6yj"/>
-                                <include reference="V82-Wv-llp"/>
-                                <include reference="KqS-w1-dhz"/>
-                                <include reference="gyh-fo-TRU"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="2j3-pE-ymc"/>
-                                <include reference="3mz-dh-XvK"/>
-                                <include reference="8HG-cx-Vqz"/>
-                                <include reference="Pie-SW-OYg"/>
-                                <include reference="cNo-6o-gJZ"/>
-                                <include reference="zNq-19-KMa"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="动态" image="icon_activity" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="动态" id="hqG-ki-Hoa"/>

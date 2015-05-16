@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // test commit
+    
     if (IOS8_OR_LATER) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound categories:[NSSet set]]];
         [[UIApplication sharedApplication] registerForRemoteNotifications];

@@ -13,11 +13,11 @@
 
 #if ONLINE
 
-#define kAPIBaseUrl @"https://api.firstp2p.com"
+#define kAPIBaseUrl @"http://www.jiaoyou.com/"
 
 #else
 
-#define kAPIBaseUrl @"http://lcstest.firstp2p.com"
+#define kAPIBaseUrl @"http://www.jiaoyou.com/"
 
 #define FP_DEBUG                        1
 

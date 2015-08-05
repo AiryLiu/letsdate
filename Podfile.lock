@@ -28,7 +28,6 @@ PODS:
   - TPKeyboardAvoiding (1.2.9)
   - UIViewController+KeyboardAnimation (1.2)
   - UMengAnalytics (3.4.6)
-  - UMengSocial (4.2.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.3)
@@ -38,7 +37,6 @@ DEPENDENCIES:
   - TPKeyboardAvoiding (~> 1.2.8)
   - UIViewController+KeyboardAnimation (~> 1.2)
   - UMengAnalytics (~> 3.4.6)
-  - UMengSocial (~> 4.2.2)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -48,6 +46,5 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: ff1ee4e5a5a0c119b965552af8f183868ea20207
   UIViewController+KeyboardAnimation: 5beaa558cabe3353c37fdd5476c68dac8dc507d5
   UMengAnalytics: 24c06f0ea07295d2f1c093f0fe12d196fd801ea4
-  UMengSocial: 85882abe5b20aa38ad558ece71360e16b5d50909
 
 COCOAPODS: 0.37.2

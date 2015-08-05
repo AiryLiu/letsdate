@@ -10,6 +10,8 @@
 		6023758E1B05E3C000521427 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6023758D1B05E3C000521427 /* UIView+HUD.m */; };
 		602375921B05EF9000521427 /* LatestVisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602375901B05EF9000521427 /* LatestVisitViewController.m */; };
 		602375931B05EF9000521427 /* LatestVisitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602375911B05EF9000521427 /* LatestVisitViewController.xib */; };
+		607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607540DB1B71FCF80070E215 /* FollowMeViewController.xib */; };
+		607540E01B71FE000070E215 /* FollowMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607540DE1B71FE000070E215 /* FollowMeViewController.m */; };
 		60A950B41B005C76008CA32A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A950B31B005C76008CA32A /* Default-568h@2x.png */; };
 		60DFB3111AF8D75300311D3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3101AF8D75300311D3A /* LoginViewController.m */; };
 		60DFB3141AF8D77E00311D3A /* RegisterFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3131AF8D77E00311D3A /* RegisterFirstViewController.m */; };
@@ -53,11 +55,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BE49E10DA1D20B130046809 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6023758C1B05E3C000521427 /* UIView+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HUD.h"; sourceTree = "<group>"; };
 		6023758D1B05E3C000521427 /* UIView+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HUD.m"; sourceTree = "<group>"; };
 		6023758F1B05EF9000521427 /* LatestVisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestVisitViewController.h; sourceTree = "<group>"; };
 		602375901B05EF9000521427 /* LatestVisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestVisitViewController.m; sourceTree = "<group>"; };
 		602375911B05EF9000521427 /* LatestVisitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestVisitViewController.xib; sourceTree = "<group>"; };
+		607540DB1B71FCF80070E215 /* FollowMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowMeViewController.xib; sourceTree = "<group>"; };
+		607540DD1B71FE000070E215 /* FollowMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowMeViewController.h; sourceTree = "<group>"; };
+		607540DE1B71FE000070E215 /* FollowMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowMeViewController.m; sourceTree = "<group>"; };
 		60A950B31B005C76008CA32A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		60DFB30F1AF8D75300311D3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		60DFB3101AF8D75300311D3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -117,7 +123,7 @@
 		60E6E3371ADE65DB0026CDC3 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		60E6E3381ADE65DB0026CDC3 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
 		AC35FE9113D847B994085153 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5BE3F24BC4E4F6FBFF13082 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DE18913996469CD718BF4965 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B715FFF5CBDD621AC2B0863 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE18913996469CD718BF4965 /* Pods.debug.xcconfig */,
+				4BE49E10DA1D20B130046809 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		60DFB30D1AF8D73E00311D3A /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,8 +183,8 @@
 				60E6E21B1ADE383E0026CDC3 /* letsdate */,
 				60E6E2381ADE383F0026CDC3 /* letsdateTests */,
 				60E6E21A1ADE383E0026CDC3 /* Products */,
-				C5BE3F24BC4E4F6FBFF13082 /* Pods.xcconfig */,
 				EEC8057D1B8C4721ADBCA051 /* Frameworks */,
+				1B715FFF5CBDD621AC2B0863 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +374,9 @@
 				6023758F1B05EF9000521427 /* LatestVisitViewController.h */,
 				602375901B05EF9000521427 /* LatestVisitViewController.m */,
 				602375911B05EF9000521427 /* LatestVisitViewController.xib */,
+				607540DD1B71FE000070E215 /* FollowMeViewController.h */,
+				607540DE1B71FE000070E215 /* FollowMeViewController.m */,
+				607540DB1B71FCF80070E215 /* FollowMeViewController.xib */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -456,6 +474,7 @@
 				60E6E22B1ADE383F0026CDC3 /* Main.storyboard in Resources */,
 				60A950B41B005C76008CA32A /* Default-568h@2x.png in Resources */,
 				60E6E2301ADE383F0026CDC3 /* LaunchScreen.xib in Resources */,
+				607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */,
 				602375931B05EF9000521427 /* LatestVisitViewController.xib in Resources */,
 				60E6E22D1ADE383F0026CDC3 /* Images.xcassets in Resources */,
 			);
@@ -483,7 +502,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		64354575A09E45E09BA7747D /* Check Pods Manifest.lock */ = {
@@ -515,6 +534,7 @@
 				60E6E3361ADE65CA0026CDC3 /* MessageViewController.m in Sources */,
 				60E6E3301ADE65A50026CDC3 /* MeViewController.m in Sources */,
 				60E6E2221ADE383F0026CDC3 /* AppDelegate.m in Sources */,
+				607540E01B71FE000070E215 /* FollowMeViewController.m in Sources */,
 				60E6E3241ADE5D520026CDC3 /* LDRequest.m in Sources */,
 				60E6E3391ADE65DB0026CDC3 /* ActivityViewController.m in Sources */,
 				60E6E3331ADE65BC0026CDC3 /* MemberViewController.m in Sources */,
@@ -652,7 +672,7 @@
 		};
 		60E6E2401ADE383F0026CDC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5BE3F24BC4E4F6FBFF13082 /* Pods.xcconfig */;
+			baseConfigurationReference = DE18913996469CD718BF4965 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jingshi Wang (276XSRXM75)";
@@ -668,7 +688,7 @@
 		};
 		60E6E2411ADE383F0026CDC3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5BE3F24BC4E4F6FBFF13082 /* Pods.xcconfig */;
+			baseConfigurationReference = 4BE49E10DA1D20B130046809 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jingshi Wang (276XSRXM75)";

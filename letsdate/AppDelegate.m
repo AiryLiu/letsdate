@@ -38,13 +38,15 @@
     self.mainWindow = mainWindow;
     self.currentWindow = mainWindow;
     
-    if (1) {
+    if (0) {
         // not login
         UINavigationController *registerVC = [[BaseViewController mainStoryBoard] instantiateViewControllerWithIdentifier:@"RegisterNavigationController"];
         UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         window.rootViewController = registerVC;
         self.currentWindow = window;
         [self.currentWindow makeKeyAndVisible];
+    } else {
+        [AppDelegate swichToMainWindow];
     }
     
     return YES;

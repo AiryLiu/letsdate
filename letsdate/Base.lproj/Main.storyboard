@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vv5-rZ-aHx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vv5-rZ-aHx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PingFangWatch.ttc">
+            <string>STHeitiSC-Light</string>
+            <string>STHeitiSC-Light</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Affair-->
         <scene sceneID="hNz-n2-bh7">
@@ -123,17 +129,32 @@
                                     <segment title="最近来访"/>
                                     <segment title="关注我的"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="O2L-MU-sKc"/>
+                                </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yml-I3-GBy">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yml-I3-GBy" secondAttribute="trailing" id="F8n-eg-PTb"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="Yml-I3-GBy" secondAttribute="bottom" id="UMS-DB-6ly"/>
+                            <constraint firstItem="Yml-I3-GBy" firstAttribute="top" secondItem="RXu-vI-Y59" secondAttribute="bottom" constant="8" id="Ujz-lh-yTJ"/>
                             <constraint firstItem="RXu-vI-Y59" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="WYY-4a-vaJ"/>
                             <constraint firstItem="RXu-vI-Y59" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="eDz-Ya-gDc"/>
                             <constraint firstItem="RXu-vI-Y59" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="gBy-7Q-DtX"/>
+                            <constraint firstItem="Yml-I3-GBy" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="mhN-G1-NHH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="动态" image="icon_activity" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" title="动态" id="hqG-ki-Hoa"/>
+                    <connections>
+                        <outlet property="containerView" destination="Yml-I3-GBy" id="WDw-7D-rSx"/>
+                        <outlet property="segmentedControl" destination="RXu-vI-Y59" id="RZ1-kp-heV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

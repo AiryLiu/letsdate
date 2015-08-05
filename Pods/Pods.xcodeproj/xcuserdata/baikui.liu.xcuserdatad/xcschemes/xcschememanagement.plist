@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-JZBorderedView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,17 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-UIViewController+KeyboardAnimation.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-UMengAnalytics.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-UMengSocial.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4E593DD11C684EB182B9F5B7</key>
+		<key>0F8B8B4A262AD4F90C9BBB25</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57623390092C43A4BA105101</key>
+		<key>310F3C23CE0F0BA29A813BA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7417BC047B8F402A8B6A01A7</key>
+		<key>4A70C685DBBB38CD9729E636</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9751D147DB0444D684DCDB4D</key>
+		<key>740F711B21BB15D0B6BC7493</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4501D800B5F442E831583F9</key>
+		<key>7B5E78908520E64F5EA6BE3A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CFEF9FB4DDF44224BC1F53E2</key>
+		<key>8782E548F806372105E2CA9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DCCDD17FA5DC47E5A49B2A79</key>
+		<key>D4999D4FC21EF9C3FE2D479F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

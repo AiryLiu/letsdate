@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FollowMeViewController">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="FVm-kg-vpi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="66L-Lh-hJr">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dR-oT-QWO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xeB-9v-8CJ">
+                            <rect key="frame" x="40" y="60" width="240" height="130"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7q-I0-rQE">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="130"/>
+                                    <string key="text">已有xx人关注了我
+其中x个最新的关注</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.83246831290000001" blue="0.68790974650000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="J7q-I0-rQE" firstAttribute="top" secondItem="xeB-9v-8CJ" secondAttribute="top" id="F0v-Ix-k8m"/>
+                                <constraint firstAttribute="trailing" secondItem="J7q-I0-rQE" secondAttribute="trailing" id="UYD-ZT-z3D"/>
+                                <constraint firstAttribute="bottom" secondItem="J7q-I0-rQE" secondAttribute="bottom" id="atq-lm-uOu"/>
+                                <constraint firstItem="J7q-I0-rQE" firstAttribute="leading" secondItem="xeB-9v-8CJ" secondAttribute="leading" id="dye-o0-ZIk"/>
+                                <constraint firstAttribute="height" constant="130" id="yYa-xr-beR"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-Vg-h9y">
+                            <rect key="frame" x="40" y="210" width="240" height="40"/>
+                            <color key="backgroundColor" red="0.26274509800000001" green="0.73725490199999999" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="xWr-5C-l1W"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="开通VIP会员">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（开通VIP会员可查看关注我的列表）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="lsu-N9-Ecs">
+                            <rect key="frame" x="40" y="258" width="240" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="dwI-tY-EdR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xeB-9v-8CJ" secondAttribute="trailing" constant="40" id="5aE-23-Gy6"/>
+                        <constraint firstAttribute="trailing" secondItem="ltH-Vg-h9y" secondAttribute="trailing" constant="40" id="Abw-g4-NmW"/>
+                        <constraint firstItem="xeB-9v-8CJ" firstAttribute="leading" secondItem="3dR-oT-QWO" secondAttribute="leading" constant="40" id="DL3-V6-ztI"/>
+                        <constraint firstItem="lsu-N9-Ecs" firstAttribute="leading" secondItem="3dR-oT-QWO" secondAttribute="leading" constant="40" id="HU5-cf-kQP"/>
+                        <constraint firstItem="ltH-Vg-h9y" firstAttribute="top" secondItem="xeB-9v-8CJ" secondAttribute="bottom" constant="20" id="PUh-Jr-lew"/>
+                        <constraint firstItem="lsu-N9-Ecs" firstAttribute="top" secondItem="ltH-Vg-h9y" secondAttribute="bottom" constant="8" id="RL3-KD-g1y"/>
+                        <constraint firstAttribute="trailing" secondItem="lsu-N9-Ecs" secondAttribute="trailing" constant="40" id="ZlL-vc-cQh"/>
+                        <constraint firstItem="ltH-Vg-h9y" firstAttribute="leading" secondItem="3dR-oT-QWO" secondAttribute="leading" constant="40" id="sii-af-dJ8"/>
+                        <constraint firstItem="xeB-9v-8CJ" firstAttribute="top" secondItem="3dR-oT-QWO" secondAttribute="top" constant="60" id="t0u-Yj-Get"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3dR-oT-QWO" secondAttribute="trailing" id="6PU-LI-fHo"/>
+                <constraint firstItem="3dR-oT-QWO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IC9-6T-5RZ"/>
+                <constraint firstAttribute="bottom" secondItem="3dR-oT-QWO" secondAttribute="bottom" id="Q6b-Cr-Cxe"/>
+                <constraint firstItem="66L-Lh-hJr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WPd-Z5-GzR"/>
+                <constraint firstAttribute="trailing" secondItem="66L-Lh-hJr" secondAttribute="trailing" id="gVz-JN-TEy"/>
+                <constraint firstAttribute="bottom" secondItem="66L-Lh-hJr" secondAttribute="bottom" id="lVg-rp-kfb"/>
+                <constraint firstItem="3dR-oT-QWO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mny-sK-oU7"/>
+                <constraint firstItem="66L-Lh-hJr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qpS-NS-vt8"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

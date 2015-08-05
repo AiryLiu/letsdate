@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LatestVisitViewController">
@@ -11,9 +12,89 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="vGP-It-MkR">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="separatorColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhr-Wv-vXg">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QsC-3A-Le4">
+                            <rect key="frame" x="40" y="60" width="240" height="130"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azc-ZA-SMV">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="130"/>
+                                    <string key="text">已有xx人看过我
+其中x个最新的来访</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.83246831293706292" blue="0.68790974650349601" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="Azc-ZA-SMV" firstAttribute="leading" secondItem="QsC-3A-Le4" secondAttribute="leading" id="M72-BI-lea"/>
+                                <constraint firstItem="Azc-ZA-SMV" firstAttribute="top" secondItem="QsC-3A-Le4" secondAttribute="top" id="U6b-De-afb"/>
+                                <constraint firstAttribute="bottom" secondItem="Azc-ZA-SMV" secondAttribute="bottom" id="YZ8-tv-fkS"/>
+                                <constraint firstAttribute="trailing" secondItem="Azc-ZA-SMV" secondAttribute="trailing" id="gJZ-6O-pFp"/>
+                                <constraint firstAttribute="height" constant="130" id="mXX-ti-Qqk"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NB-LD-SuA">
+                            <rect key="frame" x="40" y="210" width="240" height="40"/>
+                            <color key="backgroundColor" red="0.26274509800000001" green="0.73725490199999999" blue="0.66274509800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="AfS-Ol-fDo"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="开通VIP会员">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="（开通VIP会员可查看最近来访列表）" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yq5-bM-e7g">
+                            <rect key="frame" x="40" y="258" width="240" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="ARW-5c-n9Z"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" red="0.30196078431372547" green="0.30196078431372547" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="2NB-LD-SuA" firstAttribute="top" secondItem="QsC-3A-Le4" secondAttribute="bottom" constant="20" id="CoY-F2-pxF"/>
+                        <constraint firstAttribute="trailing" secondItem="yq5-bM-e7g" secondAttribute="trailing" constant="40" id="F0q-k0-87n"/>
+                        <constraint firstItem="QsC-3A-Le4" firstAttribute="leading" secondItem="uhr-Wv-vXg" secondAttribute="leading" constant="40" id="KW9-Ab-q70"/>
+                        <constraint firstItem="QsC-3A-Le4" firstAttribute="top" secondItem="uhr-Wv-vXg" secondAttribute="top" constant="60" id="Ro4-8t-Pa2"/>
+                        <constraint firstItem="yq5-bM-e7g" firstAttribute="leading" secondItem="uhr-Wv-vXg" secondAttribute="leading" constant="40" id="Tvq-DR-V8j"/>
+                        <constraint firstAttribute="trailing" secondItem="2NB-LD-SuA" secondAttribute="trailing" constant="40" id="YSR-z1-pUR"/>
+                        <constraint firstItem="2NB-LD-SuA" firstAttribute="leading" secondItem="uhr-Wv-vXg" secondAttribute="leading" constant="40" id="dLz-EY-ZJv"/>
+                        <constraint firstItem="yq5-bM-e7g" firstAttribute="top" secondItem="2NB-LD-SuA" secondAttribute="bottom" constant="8" id="hu1-xg-cOe"/>
+                        <constraint firstAttribute="trailing" secondItem="QsC-3A-Le4" secondAttribute="trailing" constant="40" id="qzU-td-z8F"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vGP-It-MkR" secondAttribute="bottom" id="SUy-ck-iM2"/>
+                <constraint firstItem="uhr-Wv-vXg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yrp-5L-Vzb"/>
+                <constraint firstItem="vGP-It-MkR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="b1o-Q7-HJe"/>
+                <constraint firstItem="vGP-It-MkR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jMv-LN-Ngw"/>
+                <constraint firstAttribute="trailing" secondItem="uhr-Wv-vXg" secondAttribute="trailing" id="ljP-0R-4UQ"/>
+                <constraint firstAttribute="trailing" secondItem="vGP-It-MkR" secondAttribute="trailing" id="mSc-o4-moj"/>
+                <constraint firstAttribute="bottom" secondItem="uhr-Wv-vXg" secondAttribute="bottom" id="ttz-Ff-8Jm"/>
+                <constraint firstItem="uhr-Wv-vXg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="y3I-PG-t3l"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
 </document>

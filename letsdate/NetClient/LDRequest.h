@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 Maitang. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "LDApiClient.h"
 
 @interface LDRequest : NSObject
 

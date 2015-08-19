@@ -12,6 +12,7 @@
 		602375931B05EF9000521427 /* LatestVisitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602375911B05EF9000521427 /* LatestVisitViewController.xib */; };
 		607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607540DB1B71FCF80070E215 /* FollowMeViewController.xib */; };
 		607540E01B71FE000070E215 /* FollowMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 607540DE1B71FE000070E215 /* FollowMeViewController.m */; };
+		60A6A9311B8497CE00D7B643 /* CommonButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A6A9301B8497CE00D7B643 /* CommonButton.m */; };
 		60A950B41B005C76008CA32A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60A950B31B005C76008CA32A /* Default-568h@2x.png */; };
 		60B8517B1B72195200D37F3F /* LDUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B8517A1B72195200D37F3F /* LDUserRequest.m */; };
 		60DFB3111AF8D75300311D3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3101AF8D75300311D3A /* LoginViewController.m */; };
@@ -24,7 +25,6 @@
 		60E6E2281ADE383F0026CDC3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E2271ADE383F0026CDC3 /* SecondViewController.m */; };
 		60E6E22B1ADE383F0026CDC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E6E2291ADE383F0026CDC3 /* Main.storyboard */; };
 		60E6E22D1ADE383F0026CDC3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E6E22C1ADE383F0026CDC3 /* Images.xcassets */; };
-		60E6E2301ADE383F0026CDC3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E6E22E1ADE383F0026CDC3 /* LaunchScreen.xib */; };
 		60E6E23C1ADE383F0026CDC3 /* letsdateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E23B1ADE383F0026CDC3 /* letsdateTests.m */; };
 		60E6E2B61ADE46100026CDC3 /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E2471ADE46100026CDC3 /* NSDictionary+Additions.m */; };
 		60E6E2B71ADE46100026CDC3 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E2491ADE46100026CDC3 /* UIColor+Additions.m */; };
@@ -65,6 +65,8 @@
 		607540DB1B71FCF80070E215 /* FollowMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowMeViewController.xib; sourceTree = "<group>"; };
 		607540DD1B71FE000070E215 /* FollowMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowMeViewController.h; sourceTree = "<group>"; };
 		607540DE1B71FE000070E215 /* FollowMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowMeViewController.m; sourceTree = "<group>"; };
+		60A6A92F1B8497CE00D7B643 /* CommonButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonButton.h; sourceTree = "<group>"; };
+		60A6A9301B8497CE00D7B643 /* CommonButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonButton.m; sourceTree = "<group>"; };
 		60A950B31B005C76008CA32A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		60B851791B72195200D37F3F /* LDUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDUserRequest.h; sourceTree = "<group>"; };
 		60B8517A1B72195200D37F3F /* LDUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDUserRequest.m; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 		60E6E2271ADE383F0026CDC3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		60E6E22A1ADE383F0026CDC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60E6E22C1ADE383F0026CDC3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		60E6E22F1ADE383F0026CDC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		60E6E2351ADE383F0026CDC3 /* letsdateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = letsdateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E6E23A1ADE383F0026CDC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E6E23B1ADE383F0026CDC3 /* letsdateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = letsdateTests.m; sourceTree = "<group>"; };
@@ -218,7 +219,6 @@
 				60E6E2271ADE383F0026CDC3 /* SecondViewController.m */,
 				60E6E2291ADE383F0026CDC3 /* Main.storyboard */,
 				60E6E22C1ADE383F0026CDC3 /* Images.xcassets */,
-				60E6E22E1ADE383F0026CDC3 /* LaunchScreen.xib */,
 				60E6E21C1ADE383E0026CDC3 /* Supporting Files */,
 			);
 			path = letsdate;
@@ -331,6 +331,8 @@
 		60E6E2611ADE46100026CDC3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				60A6A92F1B8497CE00D7B643 /* CommonButton.h */,
+				60A6A9301B8497CE00D7B643 /* CommonButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -478,7 +480,6 @@
 			files = (
 				60E6E22B1ADE383F0026CDC3 /* Main.storyboard in Resources */,
 				60A950B41B005C76008CA32A /* Default-568h@2x.png in Resources */,
-				60E6E2301ADE383F0026CDC3 /* LaunchScreen.xib in Resources */,
 				607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */,
 				602375931B05EF9000521427 /* LatestVisitViewController.xib in Resources */,
 				60E6E22D1ADE383F0026CDC3 /* Images.xcassets in Resources */,
@@ -538,6 +539,7 @@
 				60B8517B1B72195200D37F3F /* LDUserRequest.m in Sources */,
 				60E6E2281ADE383F0026CDC3 /* SecondViewController.m in Sources */,
 				60E6E3361ADE65CA0026CDC3 /* MessageViewController.m in Sources */,
+				60A6A9311B8497CE00D7B643 /* CommonButton.m in Sources */,
 				60E6E3301ADE65A50026CDC3 /* MeViewController.m in Sources */,
 				60E6E2221ADE383F0026CDC3 /* AppDelegate.m in Sources */,
 				607540E01B71FE000070E215 /* FollowMeViewController.m in Sources */,
@@ -589,14 +591,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		60E6E22E1ADE383F0026CDC3 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				60E6E22F1ADE383F0026CDC3 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -634,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -669,7 +663,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -681,14 +675,15 @@
 			baseConfigurationReference = DE18913996469CD718BF4965 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jingshi Wang (276XSRXM75)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "letsdate/LetsDate-Prefix.pch";
 				INFOPLIST_FILE = letsdate/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "814befe8-dced-49bf-9541-9cf827d668b1";
+				PROVISIONING_PROFILE = "c01082ed-7c1d-4851-899a-7d7979157b13";
 			};
 			name = Debug;
 		};
@@ -697,14 +692,15 @@
 			baseConfigurationReference = 4BE49E10DA1D20B130046809 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jingshi Wang (276XSRXM75)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "letsdate/LetsDate-Prefix.pch";
 				INFOPLIST_FILE = letsdate/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee99c31d-424c-4ca3-b049-65ff41b81a05";
+				PROVISIONING_PROFILE = "c5e6ce7e-2c4c-4dd4-b6b8-341ba2fe8aea";
 			};
 			name = Release;
 		};

@@ -10,13 +10,13 @@
 
 @interface LDUserRequest : LDRequest
 
-- (void)loginWithUserId:(NSString *)userId
++ (NSURLSessionDataTask *)loginWithUserId:(NSString *)userId
                password:(NSString *)password
             deviceToken:(NSString *)deviceToken
                 success:(void (^)(id results, NSError *error))successBlock
                 failure:(void (^)(id results, NSError *error))failureBlock;
 
-- (void)registerWithPassword:(NSString *)password
++ (NSURLSessionDataTask *)registerWithPassword:(NSString *)password
                          sex:(NSString *)sex
                          age:(NSString *)age
                      success:(void (^)(id results, NSError *error))successBlock

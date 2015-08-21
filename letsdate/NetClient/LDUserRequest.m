@@ -10,24 +10,24 @@
 
 @implementation LDUserRequest
 
-- (void)loginWithUserId:(NSString *)userId
++ (NSURLSessionDataTask *)loginWithUserId:(NSString *)userId
                password:(NSString *)password
             deviceToken:(NSString *)deviceToken
                 success:(void (^)(id results, NSError *error))successBlock
                 failure:(void (^)(id results, NSError *error))failureBlock
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"userid":userId, @"pwd":password, @"token":deviceToken}];
-    [LDRequest getFromPath:ACCOUNT_LOGIN params:params success:successBlock failure:failureBlock];
+    return [LDRequest getFromPath:ACCOUNT_LOGIN params:params success:successBlock failure:failureBlock];
 }
 
-- (void)registerWithPassword:(NSString *)password
++ (NSURLSessionDataTask *)registerWithPassword:(NSString *)password
                          sex:(NSString *)sex
                          age:(NSString *)age
                      success:(void (^)(id results, NSError *error))successBlock
                      failure:(void (^)(id results, NSError *error))failureBlock
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"pwd":password, @"sex":sex, @"age":age}];
-    [LDRequest getFromPath:ACCOUNT_LOGIN params:params success:successBlock failure:failureBlock];
+    return [LDRequest getFromPath:ACCOUNT_REGIST params:params success:successBlock failure:failureBlock];
 }
 
 @end

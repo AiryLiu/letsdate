@@ -10,6 +10,8 @@
 #import "LoginViewController.h"
 #import "RegisterFirstViewController.h"
 
+#import "LDUserModel.h"
+
 @interface AppDelegate ()
 
 @end
@@ -40,16 +42,15 @@
     self.mainWindow = mainWindow;
     self.currentWindow = mainWindow;
     
-    if (0) {
+    if (![LDUserModel isUserLogin]) {
         // not login
         UINavigationController *registerVC = [[BaseViewController mainStoryBoard] instantiateViewControllerWithIdentifier:@"RegisterNavigationController"];
         UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         window.rootViewController = registerVC;
         self.currentWindow = window;
-        [self.currentWindow makeKeyAndVisible];
-    } else {
-        [AppDelegate swichToMainWindow];
     }
+    
+    [self.currentWindow makeKeyAndVisible];
     
     return YES;
 }

@@ -9,6 +9,9 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 
+#import "LDUserRequest.h"
+#import "LDUserModel.h"
+
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -85,16 +88,26 @@
 
 - (void)queryLogin
 {
+    NSString *userId = self.nameTextField.text;
+    NSString *password = self.passwordTextField.text;
+    
     __weak LoginViewController *weakSelf = self;
     [self.view showHUDLoading:@"加载中"];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [LDUserRequest loginWithUserId:userId password:password deviceToken:@"null" success:^(id results, NSError *error) {
         // success
         [weakSelf.view hideHUDLoading];
-        
+        // save profile
+        if ([results isKindOfClass:[NSDictionary class]]) {
+            NSMutableDictionary *profileDic = [results mutableCopy];
+            [profileDic setObject:userId forKey:@"userid"];
+            [profileDic setObject:password forKey:@"pwd"];
+            [LDUserModel refreshLocalProfileWithDictionary:profileDic];
+        }
         [AppDelegate swichToMainWindow];
-        
-    });
+    } failure:^(id results, NSError *error) {
+        // failure
+        [weakSelf.view hideHUDLoading];
+    }];
 }
 
 @end

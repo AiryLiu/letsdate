@@ -13,13 +13,28 @@
 + (NSURLSessionDataTask *)getFromPath:(NSString *)urlPath params:(NSDictionary *)paramDic success:(void (^)(id results, NSError *error))successBlock failure:(void (^)(id results, NSError *error))failureBlock
 {
     return [[LDApiClient sharedClient] GET:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        NSArray *postsFromResponse = [JSON valueForKeyPath:@"data"];
-        if (successBlock) {
-            successBlock([NSArray arrayWithArray:postsFromResponse], nil);
+        NSError *error = nil;
+        if ([JSON isKindOfClass:[NSDictionary class]]) {
+            NSString *status = [JSON objectForKey:@"status"];
+            id results = [JSON objectForKey:@"result"];
+            if ([status isEqualToString:LD_QUERY_STATUS_SUCCESS]) {
+                if (successBlock) {
+                    successBlock(results, nil);
+                }
+            } else {
+                error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
+            }
+        } else {
+            error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
         }
+        
+        if (error&&failureBlock) {
+            failureBlock(nil, error);
+        }
+        
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
         if (failureBlock) {
-            failureBlock([NSArray array], error);
+            failureBlock(nil, error);
         }
     }];
 }
@@ -27,13 +42,27 @@
 + (NSURLSessionDataTask *)postToPath:(NSString *)urlPath params:(NSDictionary *)paramDic success:(void (^)(id results, NSError *error))successBlock failure:(void (^)(id results, NSError *error))failureBlock
 {
     return [[LDApiClient sharedClient] POST:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
-        NSArray *postsFromResponse = [JSON valueForKeyPath:@"data"];
-        if (successBlock) {
-            successBlock([NSArray arrayWithArray:postsFromResponse], nil);
+        NSError *error = nil;
+        if ([JSON isKindOfClass:[NSDictionary class]]) {
+            NSString *status = [JSON objectForKey:@"status"];
+            id results = [JSON objectForKey:@"result"];
+            if ([status isEqualToString:LD_QUERY_STATUS_SUCCESS]) {
+                if (successBlock) {
+                    successBlock(results, nil);
+                }
+            } else {
+                error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
+            }
+        } else {
+            error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
+        }
+        
+        if (error&&failureBlock) {
+            failureBlock(nil, error);
         }
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
         if (failureBlock) {
-            failureBlock([NSArray array], error);
+            failureBlock(nil, error);
         }
     }];
 }

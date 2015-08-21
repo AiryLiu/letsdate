@@ -10,6 +10,11 @@
 #define letsdate_ClientConfigure_h
 #endif
 
+static NSString *const LD_QUERY_STATUS_SUCCESS = @"1-001";// 成功
+static NSString *const LD_QUERY_STATUS_ERROR = @"2-002";// 失败
+
+static NSString *const LD_QUERY_ERROR_DOMAIN = @"com.letsdate.api";// 失败
+
 static NSString *const ACCOUNT_LOGIN = @"/Account/Login";// 登录
 
 static NSString *const ACCOUNT_REGIST = @"/Account/Regist";// 注册

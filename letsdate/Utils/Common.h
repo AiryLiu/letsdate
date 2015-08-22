@@ -9,6 +9,8 @@
 #ifndef LiCaiShi_Common_h
 #define LiCaiShi_Common_h
 
+#define NETWORK 0
+
 #define ONLINE  0
 
 #if ONLINE

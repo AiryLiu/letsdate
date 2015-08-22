@@ -12,6 +12,7 @@
 
 + (NSURLSessionDataTask *)getFromPath:(NSString *)urlPath params:(NSDictionary *)paramDic success:(void (^)(id results, NSError *error))successBlock failure:(void (^)(id results, NSError *error))failureBlock
 {
+#if NETWORK
     return [[LDApiClient sharedClient] GET:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
         NSError *error = nil;
         if ([JSON isKindOfClass:[NSDictionary class]]) {
@@ -37,10 +38,17 @@
             failureBlock(nil, error);
         }
     }];
+#else
+    if (successBlock) {
+        successBlock(@{}, nil);
+    }
+    return nil;
+#endif
 }
 
 + (NSURLSessionDataTask *)postToPath:(NSString *)urlPath params:(NSDictionary *)paramDic success:(void (^)(id results, NSError *error))successBlock failure:(void (^)(id results, NSError *error))failureBlock
 {
+#if NETWORK
     return [[LDApiClient sharedClient] POST:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
         NSError *error = nil;
         if ([JSON isKindOfClass:[NSDictionary class]]) {
@@ -65,6 +73,12 @@
             failureBlock(nil, error);
         }
     }];
+#else
+    if (successBlock) {
+        successBlock(@{}, nil);
+    }
+    return nil;
+#endif
 }
 
 @end

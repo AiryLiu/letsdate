@@ -98,10 +98,10 @@
         [weakSelf.view hideHUDLoading];
         // save profile
         if ([results isKindOfClass:[NSDictionary class]]) {
-            NSMutableDictionary *profileDic = [results mutableCopy];
-            [profileDic setObject:userId forKey:@"userid"];
-            [profileDic setObject:password forKey:@"pwd"];
-            [LDUserModel refreshLocalProfileWithDictionary:profileDic];
+            LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
+            profile.userid = userId;
+            profile.pwd = password;
+            [profile saveToLocal];
         }
         [AppDelegate swichToMainWindow];
     } failure:^(id results, NSError *error) {

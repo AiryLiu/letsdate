@@ -7,7 +7,16 @@
 //
 
 #import "MeViewController.h"
+#import "AppDelegate.h"
+#import "LDUserModel.h"
 
 @implementation MeViewController
+
+- (IBAction)logoutButtonClicked:(UIButton *)sender
+{
+    [LDUserModel clearLocalProfile];
+    [AppDelegate showRegister];
+    
+}
 
 @end

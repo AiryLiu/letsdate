@@ -14,4 +14,10 @@
 
 + (void)saveDictionary:(NSDictionary *)dictionary atPath:(NSString *)path;
 
++ (NSData *)dataFromPath:(NSString *)path;
+
++ (NSString *)saveData:(NSData *)data atPath:(NSString *)path;
+
++ (void)deleteFileAtPath:(NSString *)path;
+
 @end

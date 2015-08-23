@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vv5-rZ-aHx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vv5-rZ-aHx">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -326,7 +326,24 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="我" image="icon_me" id="hXp-sp-gsw"/>
-                    <navigationItem key="navigationItem" title="我" id="XtP-sP-jVs"/>
+                    <navigationItem key="navigationItem" title="我" id="XtP-sP-jVs">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ge7-KD-Qdr">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VLH-GW-W5e">
+                                <rect key="frame" x="-23" y="-15" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="退出">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonClicked:" destination="PxO-yx-Z3H" eventType="touchUpInside" id="nr9-IH-lNz"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJX-hx-K8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1255,7 +1272,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didSelectSex:" destination="ZTI-8N-TS3" eventType="touchUpInside" id="JzG-wH-8eR"/>
-                                    <segue destination="icf-m3-cIE" kind="show" id="Hw6-RN-zi9"/>
+                                    <segue destination="icf-m3-cIE" kind="show" identifier="sRegisterMan" id="Hw6-RN-zi9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZ2-WG-bwn">
@@ -1270,7 +1287,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didSelectSex:" destination="ZTI-8N-TS3" eventType="touchUpInside" id="2BU-qc-XEC"/>
-                                    <segue destination="icf-m3-cIE" kind="show" id="KQP-5t-Rq3"/>
+                                    <segue destination="icf-m3-cIE" kind="show" identifier="sRegisterWoman" id="KQP-5t-Rq3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通过注册，即表示接受使用协议" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnz-rT-ZD1">
@@ -1313,7 +1330,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UbH-6U-uYX" kind="presentation" id="kk0-x0-oXL"/>
+                                    <segue destination="UbH-6U-uYX" kind="presentation" identifier="sRegisterLogin" id="kk0-x0-oXL"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择年龄" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-yc-03b">
@@ -1383,7 +1400,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="xyU-dm-Vlm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0b-Rq-VHd">
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0b-Rq-VHd">
                                 <rect key="frame" x="160" y="530" width="144" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PR7-El-odA"/>
@@ -1394,7 +1411,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mOX-IL-qhj" kind="show" id="kk2-SZ-78e"/>
+                                    <segue destination="mOX-IL-qhj" kind="show" identifier="sRegisterJump" id="kk2-SZ-78e"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您目前的感情状态？" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wc8-Qq-id0">
@@ -1409,7 +1426,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PI-pI-EpD">
                                 <rect key="frame" x="16" y="179" width="288" height="136"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AO3-Rt-2sN">
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AO3-Rt-2sN">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="60"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1419,11 +1436,10 @@
                                         <state key="selected" backgroundImage="btn_orange"/>
                                         <state key="highlighted" backgroundImage="btn_orange"/>
                                         <connections>
-                                            <action selector="didSelectChoice:" destination="icf-m3-cIE" eventType="touchUpInside" id="Rf3-an-a8x"/>
-                                            <segue destination="mOX-IL-qhj" kind="show" id="2xn-vK-vcD"/>
+                                            <segue destination="mOX-IL-qhj" kind="show" identifier="sRegisterChoose" id="2xn-vK-vcD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htm-IE-Wdf">
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htm-IE-Wdf">
                                         <rect key="frame" x="152" y="0.0" width="136" height="60"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1433,11 +1449,10 @@
                                         <state key="selected" backgroundImage="btn_orange"/>
                                         <state key="highlighted" backgroundImage="btn_orange"/>
                                         <connections>
-                                            <action selector="didSelectChoice:" destination="icf-m3-cIE" eventType="touchUpInside" id="dXC-pI-yqE"/>
-                                            <segue destination="mOX-IL-qhj" kind="show" id="rTJ-fr-y0D"/>
+                                            <segue destination="mOX-IL-qhj" kind="show" identifier="sRegisterChoose" id="rTJ-fr-y0D"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-Pc-TBH">
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbg-Pc-TBH">
                                         <rect key="frame" x="0.0" y="76" width="136" height="60"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1447,11 +1462,10 @@
                                         <state key="selected" backgroundImage="btn_orange"/>
                                         <state key="highlighted" backgroundImage="btn_orange"/>
                                         <connections>
-                                            <action selector="didSelectChoice:" destination="icf-m3-cIE" eventType="touchUpInside" id="T0t-Zc-vIe"/>
-                                            <segue destination="mOX-IL-qhj" kind="show" id="Od4-w6-XXa"/>
+                                            <segue destination="mOX-IL-qhj" kind="show" identifier="sRegisterChoose" id="Od4-w6-XXa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-zy-igV">
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7A-zy-igV">
                                         <rect key="frame" x="152" y="76" width="136" height="60"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1461,8 +1475,7 @@
                                         <state key="selected" backgroundImage="btn_orange"/>
                                         <state key="highlighted" backgroundImage="btn_orange"/>
                                         <connections>
-                                            <action selector="didSelectChoice:" destination="icf-m3-cIE" eventType="touchUpInside" id="NGm-BY-8da"/>
-                                            <segue destination="mOX-IL-qhj" kind="show" id="cmc-lZ-Keg"/>
+                                            <segue destination="mOX-IL-qhj" kind="show" identifier="sRegisterChoose" id="cmc-lZ-Keg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1517,12 +1530,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="完善资料" id="jH2-lm-X7a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="firstBtn" destination="AO3-Rt-2sN" id="LtQ-f6-Dvv"/>
-                        <outlet property="fourthBtn" destination="j7A-zy-igV" id="vgz-2f-PuI"/>
-                        <outlet property="secondBtn" destination="htm-IE-Wdf" id="AHT-Zp-qXf"/>
-                        <outlet property="thirdBtn" destination="Xbg-Pc-TBH" id="LjY-9r-uI2"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="foU-yR-vtw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1531,7 +1538,7 @@
         <!--完善资料-->
         <scene sceneID="Ve9-tw-a8Q">
             <objects>
-                <viewController storyboardIdentifier="RegisterStepTwoViewController" id="mOX-IL-qhj" customClass="RegisterStepTwoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterStepTwoViewController" id="mOX-IL-qhj" customClass="RegisterStepOneViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ezL-OC-lbG"/>
                         <viewControllerLayoutGuide type="bottom" id="wsY-mw-a79"/>
@@ -1546,7 +1553,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="ebC-eU-UoO">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B24-na-SNm">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B24-na-SNm">
                                         <rect key="frame" x="160" y="530" width="144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="144" id="jIG-8F-lGo"/>
@@ -1579,7 +1586,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTR-F1-oIz">
                                         <rect key="frame" x="16" y="179" width="288" height="136"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1j-Em-jL8">
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1j-Em-jL8">
                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1592,7 +1599,7 @@
                                                     <segue destination="bWa-Rl-A0p" kind="show" id="2xP-vX-yFX"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbq-6m-9yG">
+                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbq-6m-9yG">
                                                 <rect key="frame" x="152" y="0.0" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1605,7 +1612,7 @@
                                                     <segue destination="bWa-Rl-A0p" kind="show" id="6t5-Ml-1wx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-JB-n2Z">
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-JB-n2Z">
                                                 <rect key="frame" x="0.0" y="76" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1618,7 +1625,7 @@
                                                     <segue destination="bWa-Rl-A0p" kind="show" id="G33-TW-bwb"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIg-u8-hDt">
+                                            <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIg-u8-hDt">
                                                 <rect key="frame" x="152" y="76" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1697,7 +1704,7 @@
         <!--完善资料-->
         <scene sceneID="hlm-xI-cdF">
             <objects>
-                <viewController id="ZzX-5j-TBU" sceneMemberID="viewController">
+                <viewController id="ZzX-5j-TBU" customClass="RegisterStepOneViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7UZ-wx-wDL"/>
                         <viewControllerLayoutGuide type="bottom" id="o8h-yn-B4H"/>
@@ -1712,17 +1719,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-TE-gS7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7D0-wV-crQ">
-                                        <rect key="frame" x="160" y="530" width="144" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="20R-Al-t29"/>
-                                            <constraint firstAttribute="width" constant="144" id="3PZ-Qr-6Wt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="跳过&gt;">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_guide_4" translatesAutoresizingMaskIntoConstraints="NO" id="r5Y-fa-GY4">
                                         <rect key="frame" x="98" y="94" width="125" height="25"/>
                                         <constraints>
@@ -1746,15 +1742,19 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rCr-2a-GWu">
                                                 <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                                <color key="backgroundColor" red="0.59215686270000001" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lSy-eM-oN9">
                                                 <rect key="frame" x="74" y="0.0" width="66" height="66"/>
+                                                <color key="backgroundColor" red="0.59215686270000001" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdZ-Wy-xF5">
                                                 <rect key="frame" x="148" y="0.0" width="66" height="66"/>
+                                                <color key="backgroundColor" red="0.59215686270000001" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BM0-f7-Df5">
                                                 <rect key="frame" x="222" y="0.0" width="66" height="66"/>
+                                                <color key="backgroundColor" red="0.59215686270000001" green="0.68627450980000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1785,6 +1785,7 @@
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yOf-91-5K4">
                                         <rect key="frame" x="110" y="283" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.58472858839999997" blue="0.055503595959999999" alpha="0.88" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="B5A-ud-Qgv"/>
                                             <constraint firstAttribute="width" constant="100" id="aae-zK-DaR"/>
@@ -1810,6 +1811,9 @@
                                         <state key="normal" title="上传头像">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="chooseAvatar:" destination="ZzX-5j-TBU" eventType="touchUpInside" id="8ci-Wf-JSg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGt-dd-a2n">
                                         <rect key="frame" x="40" y="457" width="240" height="44"/>
@@ -1821,6 +1825,9 @@
                                         <state key="normal" title="暂时跳过">
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="skipAvatar:" destination="ZzX-5j-TBU" eventType="touchUpInside" id="JyJ-cu-HTN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1837,13 +1844,11 @@
                                     <constraint firstAttribute="trailing" secondItem="mWM-Xb-4Cl" secondAttribute="trailing" constant="40" id="TX8-QW-otP"/>
                                     <constraint firstAttribute="trailing" secondItem="V0Q-4K-01Z" secondAttribute="trailing" constant="16" id="WHS-eO-CZm"/>
                                     <constraint firstItem="V0Q-4K-01Z" firstAttribute="top" secondItem="r5Y-fa-GY4" secondAttribute="bottom" constant="24" id="XGX-Zl-TYe"/>
-                                    <constraint firstAttribute="bottom" secondItem="7D0-wV-crQ" secondAttribute="bottom" constant="8" id="XLR-j0-fgF"/>
                                     <constraint firstItem="r5Y-fa-GY4" firstAttribute="top" secondItem="10K-sj-SXp" secondAttribute="top" constant="94" id="Yis-83-OX1"/>
                                     <constraint firstAttribute="centerX" secondItem="r5Y-fa-GY4" secondAttribute="centerX" id="ZK5-dl-coM"/>
                                     <constraint firstAttribute="trailing" secondItem="mGt-dd-a2n" secondAttribute="trailing" constant="40" id="cYa-gb-6nV"/>
                                     <constraint firstItem="mWM-Xb-4Cl" firstAttribute="leading" secondItem="10K-sj-SXp" secondAttribute="leading" constant="40" id="elg-O6-Ej4"/>
                                     <constraint firstItem="TqH-6e-472" firstAttribute="width" secondItem="yOf-91-5K4" secondAttribute="width" id="fgh-Jn-oUi"/>
-                                    <constraint firstAttribute="trailing" secondItem="7D0-wV-crQ" secondAttribute="trailing" constant="16" id="gDY-Ta-3hL"/>
                                     <constraint firstItem="mWM-Xb-4Cl" firstAttribute="top" secondItem="yOf-91-5K4" secondAttribute="bottom" constant="15" id="ggZ-rR-D5O"/>
                                     <constraint firstItem="V0Q-4K-01Z" firstAttribute="leading" secondItem="10K-sj-SXp" secondAttribute="leading" constant="16" id="hDm-tz-ZjS"/>
                                     <constraint firstItem="9oC-TE-gS7" firstAttribute="top" secondItem="10K-sj-SXp" secondAttribute="top" id="iUR-3w-DKl"/>
@@ -1862,6 +1867,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="完善资料" id="kwh-Ne-gHS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="yOf-91-5K4" id="Iwc-PP-69p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh7-ZQ-Gdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1870,7 +1878,7 @@
         <!--完善资料-->
         <scene sceneID="Spw-Mm-fgJ">
             <objects>
-                <viewController id="bWa-Rl-A0p" sceneMemberID="viewController">
+                <viewController id="bWa-Rl-A0p" customClass="RegisterStepOneViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Kvk-xa-DfW"/>
                         <viewControllerLayoutGuide type="bottom" id="qRt-Jd-jcE"/>
@@ -1885,7 +1893,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg" translatesAutoresizingMaskIntoConstraints="NO" id="v2p-s9-1uj">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-2i-rpI">
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AuZ-2i-rpI">
                                         <rect key="frame" x="160" y="530" width="144" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="AdQ-vZ-KXQ"/>
@@ -1909,7 +1917,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8E-Xd-D91">
                                         <rect key="frame" x="16" y="179" width="288" height="212"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-fh-wjo">
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-fh-wjo">
                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1922,7 +1930,7 @@
                                                     <segue destination="ZzX-5j-TBU" kind="show" id="DIw-AC-M40"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUm-bg-SBf">
+                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUm-bg-SBf">
                                                 <rect key="frame" x="152" y="0.0" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1935,7 +1943,7 @@
                                                     <segue destination="ZzX-5j-TBU" kind="show" id="egy-5N-kZi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTN-gc-UVm">
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTN-gc-UVm">
                                                 <rect key="frame" x="0.0" y="76" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1948,7 +1956,7 @@
                                                     <segue destination="ZzX-5j-TBU" kind="show" id="SKV-mX-oE3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilS-eW-G2J">
+                                            <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilS-eW-G2J">
                                                 <rect key="frame" x="152" y="76" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1961,7 +1969,7 @@
                                                     <segue destination="ZzX-5j-TBU" kind="show" id="grm-vU-J39"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPL-fH-avH">
+                                            <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPL-fH-avH">
                                                 <rect key="frame" x="0.0" y="152" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1974,7 +1982,7 @@
                                                     <segue destination="ZzX-5j-TBU" kind="show" id="gQn-l1-6yG"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2a-8o-c9I">
+                                            <button opaque="NO" tag="6" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2a-8o-c9I">
                                                 <rect key="frame" x="152" y="152" width="136" height="60"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2107,9 +2115,9 @@
         <image name="tabbar_bg" width="320" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e9t-LM-5aX"/>
-        <segue reference="2xP-vX-yFX"/>
         <segue reference="kk2-SZ-78e"/>
         <segue reference="Hw6-RN-zi9"/>
+        <segue reference="2xP-vX-yFX"/>
+        <segue reference="DIw-AC-M40"/>
     </inferredMetricsTieBreakers>
 </document>

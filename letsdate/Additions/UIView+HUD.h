@@ -16,6 +16,8 @@
 
 - (void)showHUDMessage:(NSString *)message dismissAfter:(NSInteger)after;
 
+- (void)showHUDMessage:(NSString *)message dismissAfter:(NSInteger)after completion:(void(^)(void))completion;
+
 - (void)hideHUDLoading;
 
 - (void)hideHUDMessage;

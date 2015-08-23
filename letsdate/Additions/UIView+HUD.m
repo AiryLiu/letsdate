@@ -39,6 +39,11 @@ typedef enum {
 
 - (void)showHUDMessage:(NSString *)message dismissAfter:(NSInteger)after
 {
+    [self showHUDMessage:message dismissAfter:after completion:nil];
+}
+
+- (void)showHUDMessage:(NSString *)message dismissAfter:(NSInteger)after completion:(void(^)(void))completion
+{
     if ([self viewWithTag:LDHUDTypeMessage]) {
         return;
     }
@@ -54,6 +59,11 @@ typedef enum {
     
     if (after > 0) {
         [hud hide:YES afterDelay:after];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(after * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (completion) {
+                completion();
+            }
+        });
     }
 }
 

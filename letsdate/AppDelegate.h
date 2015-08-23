@@ -12,11 +12,11 @@
 
 @property (strong, nonatomic) UIWindow *mainWindow;
 
-@property (strong, nonatomic) UIWindow *currentWindow;
-
-+ (void)setCurrentWindow:(UIWindow *)currentWindow;
+@property (strong, nonatomic) UITabBarController *mainTabBar;
 
 + (void)swichToMainWindow;
+
++ (void)showRegister;
 
 @end
 

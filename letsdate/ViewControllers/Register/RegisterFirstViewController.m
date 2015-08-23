@@ -7,8 +7,14 @@
 //
 
 #import "RegisterFirstViewController.h"
+#import "RegisterStepOneViewController.h"
+#import "LDUserModel.h"
 
-const static NSString *ages = @"16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36";
+static NSString *const sRegisterWoman = @"sRegisterWoman";
+static NSString *const sRegisterMan = @"sRegisterMan";
+static NSString *const sRegisterLogin = @"sRegisterLogin";
+
+static NSString *const ages = @"16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36";
 
 @interface RegisterFirstViewController ()<UIPickerViewDataSource, UIPickerViewDelegate>
 
@@ -31,6 +37,9 @@ const static NSString *ages = @"16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
     nameLeftImage.contentMode = UIViewContentModeCenter;
     self.ageTextField.leftView = nameLeftImage;
     self.ageTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.selectedAge = [self.ageArray objectAtIndex:0];
+    self.ageTextField.text = self.selectedAge;
     
     __weak RegisterFirstViewController *weakSelf = self;
     UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.ageTextField.bottom, self.view.width, 150)];
@@ -58,6 +67,28 @@ const static NSString *ages = @"16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:sRegisterLogin]) {
+        // login
+    } else {
+        LDUserModel *profile = [[LDUserModel alloc] init];
+        profile.age = self.ageTextField.text;
+        if ([segue.identifier isEqualToString:sRegisterMan]) {
+            // man
+            profile.sex = @"男";
+        } else if ([segue.identifier isEqualToString:sRegisterWoman]) {
+            // woman
+            profile.sex = @"女";
+        }
+        if ([segue.destinationViewController isKindOfClass:[RegisterStepOneViewController class]]) {
+            RegisterStepOneViewController *nextVC = segue.destinationViewController;
+            nextVC.registerProfile = profile;
+            nextVC.step = RegisterStepOne;
+        }
+    }
 }
 
 - (NSArray *)ageArray

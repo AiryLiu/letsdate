@@ -8,8 +8,6 @@
 
 #import "LDUserModel.h"
 
-#import "LDFileManager.h"
-
 static NSString *const LDProfilePath = @"ld-profile.plist";
 
 @interface LDUserModel ()
@@ -41,6 +39,9 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(self.pwd != nil){
         dictionary[@"pwd"] = self.pwd;
     }
+    if(self.sex != nil){
+        dictionary[@"sex"] = self.sex;
+    }
     if(self.age != nil){
         dictionary[@"age"] = self.age;
     }
@@ -65,6 +66,12 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(self.sexatt != nil){
         dictionary[@"sexatt"] = self.sexatt;
     }
+    if(self.memessage != nil){
+        dictionary[@"memessage"] = self.memessage;
+    }
+    if(self.city != nil){
+        dictionary[@"city"] = self.city;
+    }
     if(self.vip != nil){
         dictionary[@"vip"] = self.vip;
     }
@@ -74,6 +81,13 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     return dictionary;
     
 }
+
+- (NSString *)tempUserPassword
+{
+    // 随机数
+    return @"000000";
+}
+
 @end
 
 @implementation LDUserModel (Archive)
@@ -110,6 +124,11 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     [LDFileManager saveDictionary:profileDic atPath:LDProfilePath];
 }
 
++ (void)clearLocalProfile
+{
+    [LDFileManager deleteFileAtPath:LDProfilePath];
+}
+
 - (void)refreshWithDictionary:(NSDictionary *)dictionary
 {
     if(![dictionary[@"userid"] isKindOfClass:[NSNull class]]){
@@ -117,6 +136,9 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     }
     if(![dictionary[@"pwd"] isKindOfClass:[NSNull class]]){
         self.pwd = dictionary[@"pwd"];
+    }
+    if(![dictionary[@"sex"] isKindOfClass:[NSNull class]]){
+        self.sex = dictionary[@"sex"];
     }
     if(![dictionary[@"age"] isKindOfClass:[NSNull class]]){
         self.age = dictionary[@"age"];
@@ -141,6 +163,12 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     }
     if(![dictionary[@"sexatt"] isKindOfClass:[NSNull class]]){
         self.sexatt = dictionary[@"sexatt"];
+    }
+    if(![dictionary[@"memessage"] isKindOfClass:[NSNull class]]){
+        self.memessage = dictionary[@"memessage"];
+    }
+    if(![dictionary[@"city"] isKindOfClass:[NSNull class]]){
+        self.city = dictionary[@"city"];
     }
     if(![dictionary[@"vip"] isKindOfClass:[NSNull class]]){
         self.vip = dictionary[@"vip"];

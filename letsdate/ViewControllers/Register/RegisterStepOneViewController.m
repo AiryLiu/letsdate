@@ -7,13 +7,20 @@
 //
 
 #import "RegisterStepOneViewController.h"
+#import "AppDelegate.h"
 
-@interface RegisterStepOneViewController ()
+#import "LDUserRequest.h"
+#import "UIImage+Additions.h"
 
-@property (weak, nonatomic) IBOutlet UIButton *firstBtn;
-@property (weak, nonatomic) IBOutlet UIButton *secondBtn;
-@property (weak, nonatomic) IBOutlet UIButton *thirdBtn;
-@property (weak, nonatomic) IBOutlet UIButton *fourthBtn;
+
+static NSString *const sRegisterJump = @"sRegisterJump";
+static NSString *const sRegisterChoose = @"sRegisterChoose";
+
+@interface RegisterStepOneViewController ()<UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
+
+@property (weak, nonatomic) UIButton *currentSelection;
 
 @end
 
@@ -29,50 +36,190 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)setSelectChoice:(NSInteger)choice
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    switch (choice) {
-        case 0:
-            self.firstBtn.selected = YES;
-            self.secondBtn.selected = NO;
-            self.thirdBtn.selected = NO;
-            self.fourthBtn.selected = NO;
+    // update profile
+    if ([sender isKindOfClass:[UIButton class]]) {
+        UIButton *button = sender;
+        if (button.tag > 10) {
+            // jump
+        } else {
+            // update button state
+            [self updateCurrentButton:button];
+            // update profile
+            [self updateProfile:[NSString stringWithFormat:@"%ld", button.tag]];
+        }
+    }
+    // set up next view controller
+    if ([segue.destinationViewController isKindOfClass:[RegisterStepOneViewController class]]) {
+        RegisterStepOneViewController *nextVC = segue.destinationViewController;
+        nextVC.registerProfile = self.registerProfile;
+        nextVC.step = self.step + 1;
+    }
+}
+
+#pragma mark - update
+- (void)updateCurrentButton:(UIButton *)button
+{// save current choose & update button state
+    if (self.currentSelection && self.currentSelection != button) {
+        self.currentSelection.selected = NO;
+    }
+    button.selected = YES;
+    self.currentSelection = button;
+}
+
+- (void)updateProfile:(NSString *)value
+{
+    switch (self.step) {
+        case RegisterStepOne:
+            self.registerProfile.current = value;
             break;
-        case 1:
-            self.firstBtn.selected = NO;
-            self.secondBtn.selected = YES;
-            self.thirdBtn.selected = NO;
-            self.fourthBtn.selected = NO;
+        case RegisterStepTwo:
+            self.registerProfile.sexatt = value;
             break;
-        case 2:
-            self.firstBtn.selected = NO;
-            self.secondBtn.selected = NO;
-            self.thirdBtn.selected = YES;
-            self.fourthBtn.selected = NO;
+        case RegisterStepThree:
+            self.registerProfile.bodylarge = value;
             break;
-        case 3:
-            self.firstBtn.selected = NO;
-            self.secondBtn.selected = NO;
-            self.thirdBtn.selected = NO;
-            self.fourthBtn.selected = YES;
+        case RegisterStepFour:
+            self.registerProfile.alias = value;
             break;
         default:
             break;
     }
 }
 
-- (IBAction)didSelectChoice:(UIButton *)sender
+- (NSString *)saveAvatar:(UIImage *)image user:(LDUserModel *)userProfile
 {
-    if (sender == self.firstBtn) {
-        [self setSelectChoice:0];
-    } else if (sender == self.secondBtn) {
-        [self setSelectChoice:1];
-    } else if (sender == self.thirdBtn) {
-        [self setSelectChoice:2];
-    } else if (sender == self.fourthBtn) {
-        [self setSelectChoice:3];
+    // save avatar
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSString *avatarPath = [LDFileManager saveData:imageData atPath:[NSString stringWithFormat:@"%@-avatar", userProfile.userid]];
+    return avatarPath;
+}
+
+- (void)queryRegister
+{
+    [self.view showHUDLoading:@"注册中"];
+    __weak typeof(self) weakSelf = self;
+    // make a temp password
+    self.registerProfile.pwd = [self.registerProfile tempUserPassword];
+    // query register
+    [LDUserRequest registerWithPassword:self.registerProfile.pwd sex:self.registerProfile.sex age:self.registerProfile.age success:^(id results, NSError *error) {
+        // success
+        NSString *userId = nil;// debug
+        if ([results isKindOfClass:[NSDictionary class]]) {
+            userId = [results objectForKey:@"userid"];
+        }
+        if (!userId) {
+            userId = @"1001";
+        }
+        weakSelf.registerProfile.userid = userId;
+        [weakSelf queryLogin:weakSelf.registerProfile];
+        // TODO: query update user profile
+        // [weakSelf queryUpdateProfile:];
+    } failure:^(id results, NSError *error) {
+        // failed
+        [weakSelf.view hideHUDLoading];
+        [weakSelf.view showHUDMessage:@"注册失败" dismissAfter:2.0];
+    }];
+}
+
+- (void)queryLogin:(LDUserModel *)profile
+{
+    NSString *userId = profile.userid;
+    NSString *password = profile.pwd;
+    __weak typeof(self) weakSelf = self;
+    [LDUserRequest loginWithUserId:userId password:password deviceToken:@"null" success:^(id results, NSError *error) {
+        // success
+        [weakSelf.view hideHUDLoading];
+        // save profile
+        if ([results isKindOfClass:[NSDictionary class]]) {
+            // save user profile to local
+            LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
+            profile.userid = userId;
+            profile.pwd = password;
+            [profile saveToLocal];
+            // TODO: move to queryUpdateProfile
+            [LDUserModel refreshLocalProfileWithDictionary:[weakSelf.registerProfile toDictionary]];
+            // save avatar
+            [weakSelf saveAvatar:weakSelf.avatarImageView.image user:weakSelf.registerProfile];
+        }
+        [weakSelf.view showHUDMessage:@"登陆成功" dismissAfter:2.0 completion:^{
+            [AppDelegate swichToMainWindow];
+        }];
+        
+    } failure:^(id results, NSError *error) {
+        // failure
+        [weakSelf.view hideHUDLoading];
+        [weakSelf.view showHUDMessage:@"登陆失败" dismissAfter:2.0];
+    }];
+}
+
+#pragma mark - actions
+- (IBAction)chooseAvatar:(UIButton *)sender
+{
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"去拍照", @"从相册选择", nil];
+    [actionSheet showInView:self.view];
+}
+
+- (IBAction)skipAvatar:(UIButton *)sender
+{
+    // register
+    
+}
+
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {
+        // camera
+        [self showImagePicker:UIImagePickerControllerSourceTypeCamera];
+    } else if (buttonIndex == 1) {
+        // libary
+        [self showImagePicker:UIImagePickerControllerSourceTypePhotoLibrary];
+    } else {
+        // cancel
     }
 }
 
+#pragma mark - UIImagePicker
+- (void)showImagePicker:(UIImagePickerControllerSourceType)sourceType
+{
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType = sourceType;
+        imagePicker.delegate = self;
+//        imagePicker.allowsEditing = YES;
+        [self presentViewController:imagePicker animated:YES completion:^{
+            //
+        }];
+    } else {
+        [self.view showHUDMessage:@"暂不支持拍照" dismissAfter:2.0];
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSLog(@"%@", info);
+    id image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    if ([image isKindOfClass:[UIImage class]]) {
+        UIImage *originImage = image;
+        UIImage *squredImage = [originImage squredImage];
+        UIImage *scaledImage = [squredImage scaleToRatio:200.0/squredImage.size.width];
+        
+        self.avatarImageView.image = scaledImage;
+        [self queryRegister];
+    }
+
+    [self dismissViewControllerAnimated:picker completion:^{
+        // do sth
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:picker completion:^{
+        // do sth
+    }];
+}
 
 @end

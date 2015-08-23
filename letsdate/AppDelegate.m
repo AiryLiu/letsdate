@@ -39,19 +39,14 @@
     UITabBarController *tabBarVC = [[BaseViewController mainStoryBoard] instantiateViewControllerWithIdentifier:@"MainTabBarController"];
     UIWindow *mainWindow = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     mainWindow.rootViewController = tabBarVC;
+    self.mainTabBar = tabBarVC;
     self.mainWindow = mainWindow;
-    self.currentWindow = mainWindow;
+    [self.mainWindow makeKeyAndVisible];
     
     if (![LDUserModel isUserLogin]) {
         // not login
-        UINavigationController *registerVC = [[BaseViewController mainStoryBoard] instantiateViewControllerWithIdentifier:@"RegisterNavigationController"];
-        UIWindow *window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        window.rootViewController = registerVC;
-        self.currentWindow = window;
+        [AppDelegate showRegister];
     }
-    
-    [self.currentWindow makeKeyAndVisible];
-    
     return YES;
 }
 
@@ -105,16 +100,21 @@
     }
 }
 
-+ (void)setCurrentWindow:(UIWindow *)currentWindow
++ (UITabBarController *)mainTabBar
 {
-    ((AppDelegate *)[[UIApplication sharedApplication] delegate]).currentWindow = currentWindow;
+    return ((AppDelegate *)[[UIApplication sharedApplication] delegate]).mainTabBar;
 }
 
 + (void)swichToMainWindow
 {
-    UIWindow *mainWindow = ((AppDelegate *)[[UIApplication sharedApplication] delegate]).mainWindow;
-    [AppDelegate setCurrentWindow:mainWindow];
-    [mainWindow makeKeyAndVisible];
+    [[self mainTabBar] dismissViewControllerAnimated:YES completion:nil];
+}
+
++ (void)showRegister
+{
+    UINavigationController *registerVC = [[BaseViewController mainStoryBoard] instantiateViewControllerWithIdentifier:@"RegisterNavigationController"];
+    UITabBarController *tabBar = [AppDelegate mainTabBar];
+    [tabBar presentViewController:registerVC animated:YES completion:nil];
 }
 
 @end

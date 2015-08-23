@@ -45,4 +45,32 @@
     [dictionary writeToFile:filePath atomically:YES];
 }
 
++ (NSData *)dataFromPath:(NSString *)path
+{
+    NSString *filePath = [[self rootPath] stringByAppendingPathComponent:path];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath] ) {
+        return [NSData dataWithContentsOfFile:filePath];
+    }
+    return nil;
+}
+
++ (NSString *)saveData:(NSData *)data atPath:(NSString *)path
+{
+    NSString *filePath = [[self rootPath] stringByAppendingPathComponent:path];
+    if ([data writeToFile:filePath atomically:YES]) {
+        return filePath;
+    } else {
+        return nil;
+    }
+}
+
++ (void)deleteFileAtPath:(NSString *)path
+{
+    NSString *filePath = [[self rootPath] stringByAppendingPathComponent:path];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
+    }
+}
+
 @end

@@ -45,6 +45,9 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(self.age != nil){
         dictionary[@"age"] = self.age;
     }
+    if(self.current != nil){
+        dictionary[@"current"] = self.current;
+    }
     if(self.alias != nil){
         dictionary[@"alias"] = self.alias;
     }
@@ -71,6 +74,9 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     }
     if(self.city != nil){
         dictionary[@"city"] = self.city;
+    }
+    if(self.avatar != nil){
+        dictionary[@"avatar"] = self.avatar;
     }
     if(self.vip != nil){
         dictionary[@"vip"] = self.vip;
@@ -143,6 +149,9 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(![dictionary[@"age"] isKindOfClass:[NSNull class]]){
         self.age = dictionary[@"age"];
     }
+    if(![dictionary[@"current"] isKindOfClass:[NSNull class]]){
+        self.current = dictionary[@"current"];
+    }
     if(![dictionary[@"alias"] isKindOfClass:[NSNull class]]){
         self.alias = dictionary[@"alias"];
     }
@@ -169,6 +178,9 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     }
     if(![dictionary[@"city"] isKindOfClass:[NSNull class]]){
         self.city = dictionary[@"city"];
+    }
+    if(![dictionary[@"avatar"] isKindOfClass:[NSNull class]]){
+        self.avatar = dictionary[@"avatar"];
     }
     if(![dictionary[@"vip"] isKindOfClass:[NSNull class]]){
         self.vip = dictionary[@"vip"];

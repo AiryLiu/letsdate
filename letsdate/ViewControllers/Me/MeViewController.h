@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
+@interface MeViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@end
+
 @interface MeViewController : BaseViewController
 
 @end

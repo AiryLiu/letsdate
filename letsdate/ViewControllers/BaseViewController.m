@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithHexString:@"#efefef"];
 	// Do any additional setup after loading the view.
     if (self.navigationController.viewControllers.count > 1) {
         [self setBackBarItemTarget:nil action:nil];
@@ -40,6 +41,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)setNavigationTitle:(NSString *)title
+{
+    self.navigationItem.title = title;
 }
 
 - (void)setBackBarItemTarget:(id)target action:(SEL)action

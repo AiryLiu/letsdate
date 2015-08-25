@@ -25,6 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     LatestVisitViewController *latestVisit = [[LatestVisitViewController alloc] initWithNibName:@"LatestVisitViewController" bundle:[NSBundle mainBundle]];
     FollowMeViewController *followMe = [[FollowMeViewController alloc] initWithNibName:@"FollowMeViewController" bundle:[NSBundle mainBundle]];

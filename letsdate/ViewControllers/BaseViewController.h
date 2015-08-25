@@ -11,5 +11,8 @@
 
 @interface BaseViewController : UIViewController<MBProgressHUDDelegate,UIGestureRecognizerDelegate>
 
+- (void)setNavigationTitle:(NSString *)title;
+
 + (UIStoryboard *)mainStoryBoard;
+
 @end

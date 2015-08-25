@@ -11,6 +11,15 @@
 		6023758E1B05E3C000521427 /* UIView+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6023758D1B05E3C000521427 /* UIView+HUD.m */; };
 		602375921B05EF9000521427 /* LatestVisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 602375901B05EF9000521427 /* LatestVisitViewController.m */; };
 		602375931B05EF9000521427 /* LatestVisitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602375911B05EF9000521427 /* LatestVisitViewController.xib */; };
+		6023CC621B8C5421008F8369 /* MyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6023CC601B8C5421008F8369 /* MyDetailViewController.m */; };
+		6023CC631B8C5421008F8369 /* MyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6023CC611B8C5421008F8369 /* MyDetailViewController.xib */; };
+		6023CC671B8C5454008F8369 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6023CC651B8C5454008F8369 /* SettingViewController.m */; };
+		6023CC681B8C5454008F8369 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6023CC661B8C5454008F8369 /* SettingViewController.xib */; };
+		603071501B8C6A7C003EF934 /* LDRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6030714E1B8C6A7C003EF934 /* LDRecordCell.m */; };
+		603071511B8C6A7C003EF934 /* LDRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6030714F1B8C6A7C003EF934 /* LDRecordCell.xib */; };
+		603071551B8C6CD8003EF934 /* MyVisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603071531B8C6CD8003EF934 /* MyVisitViewController.m */; };
+		603071561B8C6CD8003EF934 /* MyVisitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603071541B8C6CD8003EF934 /* MyVisitViewController.xib */; };
+		6030715A1B8C6CF1003EF934 /* MyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603071581B8C6CF1003EF934 /* MyFollowViewController.m */; };
 		605844161B86F1E300C925AC /* LDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 605844151B86F1E300C925AC /* LDUserModel.m */; };
 		605844191B86F3C200C925AC /* LDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 605844181B86F3C200C925AC /* LDFileManager.m */; };
 		607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607540DB1B71FCF80070E215 /* FollowMeViewController.xib */; };
@@ -67,6 +76,20 @@
 		6023758F1B05EF9000521427 /* LatestVisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestVisitViewController.h; sourceTree = "<group>"; };
 		602375901B05EF9000521427 /* LatestVisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestVisitViewController.m; sourceTree = "<group>"; };
 		602375911B05EF9000521427 /* LatestVisitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestVisitViewController.xib; sourceTree = "<group>"; };
+		6023CC5F1B8C5421008F8369 /* MyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDetailViewController.h; sourceTree = "<group>"; };
+		6023CC601B8C5421008F8369 /* MyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDetailViewController.m; sourceTree = "<group>"; };
+		6023CC611B8C5421008F8369 /* MyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDetailViewController.xib; sourceTree = "<group>"; };
+		6023CC641B8C5454008F8369 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		6023CC651B8C5454008F8369 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		6023CC661B8C5454008F8369 /* SettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		6030714D1B8C6A7C003EF934 /* LDRecordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDRecordCell.h; sourceTree = "<group>"; };
+		6030714E1B8C6A7C003EF934 /* LDRecordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDRecordCell.m; sourceTree = "<group>"; };
+		6030714F1B8C6A7C003EF934 /* LDRecordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDRecordCell.xib; sourceTree = "<group>"; };
+		603071521B8C6CD8003EF934 /* MyVisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVisitViewController.h; sourceTree = "<group>"; };
+		603071531B8C6CD8003EF934 /* MyVisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVisitViewController.m; sourceTree = "<group>"; };
+		603071541B8C6CD8003EF934 /* MyVisitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVisitViewController.xib; sourceTree = "<group>"; };
+		603071571B8C6CF1003EF934 /* MyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowViewController.h; sourceTree = "<group>"; };
+		603071581B8C6CF1003EF934 /* MyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowViewController.m; sourceTree = "<group>"; };
 		605844141B86F1E300C925AC /* LDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDUserModel.h; sourceTree = "<group>"; };
 		605844151B86F1E300C925AC /* LDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDUserModel.m; sourceTree = "<group>"; };
 		605844171B86F3C200C925AC /* LDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDFileManager.h; sourceTree = "<group>"; };
@@ -348,6 +371,9 @@
 			children = (
 				60A6A92F1B8497CE00D7B643 /* CommonButton.h */,
 				60A6A9301B8497CE00D7B643 /* CommonButton.m */,
+				6030714D1B8C6A7C003EF934 /* LDRecordCell.h */,
+				6030714E1B8C6A7C003EF934 /* LDRecordCell.m */,
+				6030714F1B8C6A7C003EF934 /* LDRecordCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -366,6 +392,17 @@
 			children = (
 				60E6E32E1ADE65A50026CDC3 /* MeViewController.h */,
 				60E6E32F1ADE65A50026CDC3 /* MeViewController.m */,
+				6023CC5F1B8C5421008F8369 /* MyDetailViewController.h */,
+				6023CC601B8C5421008F8369 /* MyDetailViewController.m */,
+				6023CC611B8C5421008F8369 /* MyDetailViewController.xib */,
+				6023CC641B8C5454008F8369 /* SettingViewController.h */,
+				6023CC651B8C5454008F8369 /* SettingViewController.m */,
+				6023CC661B8C5454008F8369 /* SettingViewController.xib */,
+				603071521B8C6CD8003EF934 /* MyVisitViewController.h */,
+				603071531B8C6CD8003EF934 /* MyVisitViewController.m */,
+				603071541B8C6CD8003EF934 /* MyVisitViewController.xib */,
+				603071571B8C6CF1003EF934 /* MyFollowViewController.h */,
+				603071581B8C6CF1003EF934 /* MyFollowViewController.m */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -493,7 +530,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603071561B8C6CD8003EF934 /* MyVisitViewController.xib in Resources */,
+				603071511B8C6A7C003EF934 /* LDRecordCell.xib in Resources */,
+				6023CC681B8C5454008F8369 /* SettingViewController.xib in Resources */,
 				60E6E22B1ADE383F0026CDC3 /* Main.storyboard in Resources */,
+				6023CC631B8C5421008F8369 /* MyDetailViewController.xib in Resources */,
 				60A950B41B005C76008CA32A /* Default-568h@2x.png in Resources */,
 				607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */,
 				602375931B05EF9000521427 /* LatestVisitViewController.xib in Resources */,
@@ -551,11 +592,15 @@
 				60E6E2C01ADE46100026CDC3 /* WebViewController.m in Sources */,
 				60DFB3111AF8D75300311D3A /* LoginViewController.m in Sources */,
 				60E6E2BC1ADE46100026CDC3 /* Common.m in Sources */,
+				6023CC621B8C5421008F8369 /* MyDetailViewController.m in Sources */,
+				603071501B8C6A7C003EF934 /* LDRecordCell.m in Sources */,
 				60B8517B1B72195200D37F3F /* LDUserRequest.m in Sources */,
 				60E6E2281ADE383F0026CDC3 /* SecondViewController.m in Sources */,
 				5AD8FD4C1B88C747004213A6 /* UIImage+Additions.m in Sources */,
 				605844191B86F3C200C925AC /* LDFileManager.m in Sources */,
 				60E6E3361ADE65CA0026CDC3 /* MessageViewController.m in Sources */,
+				603071551B8C6CD8003EF934 /* MyVisitViewController.m in Sources */,
+				6030715A1B8C6CF1003EF934 /* MyFollowViewController.m in Sources */,
 				60A6A9311B8497CE00D7B643 /* CommonButton.m in Sources */,
 				60E6E3301ADE65A50026CDC3 /* MeViewController.m in Sources */,
 				605844161B86F1E300C925AC /* LDUserModel.m in Sources */,
@@ -569,6 +614,7 @@
 				6023758E1B05E3C000521427 /* UIView+HUD.m in Sources */,
 				60E6E3211ADE5B8B0026CDC3 /* LDApiClient.m in Sources */,
 				60E6E32D1ADE65910026CDC3 /* AffairViewController.m in Sources */,
+				6023CC671B8C5454008F8369 /* SettingViewController.m in Sources */,
 				60E6E2BE1ADE46100026CDC3 /* KeyChainUtils.m in Sources */,
 				60DFB3141AF8D77E00311D3A /* RegisterFirstViewController.m in Sources */,
 				60DFB31A1AF8D7B200311D3A /* RegisterStepTwoViewController.m in Sources */,

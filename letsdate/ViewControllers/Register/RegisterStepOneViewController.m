@@ -81,7 +81,7 @@ static NSString *const sRegisterChoose = @"sRegisterChoose";
             self.registerProfile.bodylarge = value;
             break;
         case RegisterStepFour:
-            self.registerProfile.alias = value;
+            self.registerProfile.avatar = value;
             break;
         default:
             break;
@@ -138,10 +138,12 @@ static NSString *const sRegisterChoose = @"sRegisterChoose";
             profile.userid = userId;
             profile.pwd = password;
             [profile saveToLocal];
+            
+            // save avatar
+            weakSelf.registerProfile.avatar = [weakSelf saveAvatar:weakSelf.avatarImageView.image user:weakSelf.registerProfile];
+            
             // TODO: move to queryUpdateProfile
             [LDUserModel refreshLocalProfileWithDictionary:[weakSelf.registerProfile toDictionary]];
-            // save avatar
-            [weakSelf saveAvatar:weakSelf.avatarImageView.image user:weakSelf.registerProfile];
         }
         [weakSelf.view showHUDMessage:@"登陆成功" dismissAfter:2.0 completion:^{
             [AppDelegate swichToMainWindow];

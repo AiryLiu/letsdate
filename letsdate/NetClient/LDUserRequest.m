@@ -17,7 +17,14 @@
                 failure:(void (^)(id results, NSError *error))failureBlock
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"userid":userId, @"pwd":password, @"token":deviceToken}];
-    return [LDRequest getFromPath:ACCOUNT_LOGIN params:params success:successBlock failure:failureBlock];
+    return [LDRequest getFromPath:ACCOUNT_LOGIN params:params success:^(id results, NSError *error) {
+#if !NETWORK
+        // mock result
+#endif
+        if (successBlock) {
+            successBlock(results, error);
+        }
+    } failure:failureBlock];
 }
 
 + (NSURLSessionDataTask *)registerWithPassword:(NSString *)password

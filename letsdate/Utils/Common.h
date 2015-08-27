@@ -74,17 +74,11 @@ NSUInteger DeviceSystemMajorVersion();
 #define LARGE_PULL_COUNT                        20
 
 //notification name
-#define LCSAccountDidLoginNotification          @"LCSAccountLoginNotification"
-#define LCSAccountDidLogoutNotification         @"LCSAccountSignOutNotification"
+#define LDLoginNotification          @"LDLoginNotification"
+#define LDLogoutNotification         @"LDLogoutNotification"
 
-#define LCSPasswordDidVerifyNotification        @"LCSPasswordDidVerifyNotification"
-#define LCSGesturePasswordDidSetNotification    @"LCSGesturePasswordDidSetNotification"
-
-#define LCSBecameActiveNotification             @"LCSBecameActiveNotification"
-#define LCSResignActiveNotification             @"LCSResignActiveNotification"
-
-#define LCSRAirMenuDidCloseNotification         @"LCSRAirMenuDidCloseNotification"
-#define LCSP2PAccountRefreshNotification        @"LCSP2PAccountRefreshNotification"
+#define LDPasswordDidVerifyNotification     @"LDPasswordDidVerifyNotification"
+#define LDAccountRefreshNotification        @"LDAccountRefreshNotification"
 
 #define APPID   @""
 

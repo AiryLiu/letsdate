@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController">
             <connections>
+                <outlet property="tableView" destination="GZj-xr-WwB" id="FW6-9i-ElM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,15 +17,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="GZj-xr-WwB">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="206"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="448"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="206" id="kiF-LQ-6El"/>
                     </constraints>
                     <color key="separatorColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="kiF-LQ-6El"/>
+                        </mask>
+                    </variation>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-lD-A5c">
-                    <rect key="frame" x="15" y="214" width="290" height="40"/>
+                    <rect key="frame" x="15" y="456" width="290" height="40"/>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="iAp-X4-cEm"/>
@@ -33,12 +39,16 @@
                     <state key="normal" title="退出登录">
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="logoutButtonClicked:" destination="-1" eventType="touchUpInside" id="sbh-oq-OYP"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="GZj-xr-WwB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1sa-u6-ca6"/>
                 <constraint firstAttribute="trailing" secondItem="6f7-lD-A5c" secondAttribute="trailing" constant="15" id="29x-98-hO9"/>
+                <constraint firstAttribute="bottom" secondItem="6f7-lD-A5c" secondAttribute="bottom" constant="8" id="IbG-rr-JZz"/>
                 <constraint firstItem="6f7-lD-A5c" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="aac-sw-gn6"/>
                 <constraint firstItem="GZj-xr-WwB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="boP-rf-aPe"/>
                 <constraint firstAttribute="trailing" secondItem="GZj-xr-WwB" secondAttribute="trailing" id="lKx-wM-SvJ"/>

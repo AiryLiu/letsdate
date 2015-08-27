@@ -327,50 +327,6 @@
                                         <constraint firstAttribute="bottom" secondItem="KhA-Nn-aYl" secondAttribute="bottom" constant="15" id="jxu-lk-WYl"/>
                                     </constraints>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MeViewCell" id="VwA-K3-vxL" customClass="MeViewCell">
-                                        <rect key="frame" x="0.0" y="238" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VwA-K3-vxL" id="Md8-w8-Lmg">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="QHL-pG-u3H">
-                                                    <rect key="frame" x="297" y="12" width="23" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="23" id="GNb-Tg-aie"/>
-                                                        <constraint firstAttribute="height" constant="20" id="zmV-90-UJ1"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="tLe-Hf-6Gs">
-                                                    <rect key="frame" x="15" y="11" width="274" height="21"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="iZc-jz-s7a"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.23921568630000001" green="0.23921568630000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="tLe-Hf-6Gs" firstAttribute="leading" secondItem="Md8-w8-Lmg" secondAttribute="leading" constant="15" id="64K-fM-UHF"/>
-                                                <constraint firstItem="tLe-Hf-6Gs" firstAttribute="centerY" secondItem="Md8-w8-Lmg" secondAttribute="centerY" id="KpC-5N-bNl"/>
-                                                <constraint firstAttribute="trailing" secondItem="QHL-pG-u3H" secondAttribute="trailing" id="ShC-LH-208"/>
-                                                <constraint firstItem="QHL-pG-u3H" firstAttribute="centerY" secondItem="Md8-w8-Lmg" secondAttribute="centerY" id="k70-X1-G7r"/>
-                                                <constraint firstItem="QHL-pG-u3H" firstAttribute="leading" secondItem="tLe-Hf-6Gs" secondAttribute="trailing" constant="8" id="rJ6-JJ-hGq"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="tLe-Hf-6Gs" id="ffa-D3-bp1"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="PxO-yx-Z3H" id="oqr-GS-Ule"/>
-                                    <outlet property="delegate" destination="PxO-yx-Z3H" id="5FO-ug-P3R"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -410,7 +366,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="Vqw-Zy-JPp" id="kAM-uY-NJN"/>
+                        <outlet property="idLabel" destination="zKn-MS-n48" id="cnB-Di-we9"/>
                         <outlet property="meTableView" destination="LXV-gx-UEe" id="zb3-g3-Dwm"/>
+                        <outlet property="nameLabel" destination="5uh-vF-zGM" id="Tya-6V-P8U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yJX-hx-K8m" userLabel="First Responder" sceneMemberID="firstResponder"/>

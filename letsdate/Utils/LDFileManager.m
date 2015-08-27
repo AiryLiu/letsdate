@@ -58,7 +58,7 @@
 {
     NSString *filePath = [[self rootPath] stringByAppendingPathComponent:path];
     if ([data writeToFile:filePath atomically:YES]) {
-        return filePath;
+        return path;
     } else {
         return nil;
     }

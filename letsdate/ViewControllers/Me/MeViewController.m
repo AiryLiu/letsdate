@@ -9,20 +9,11 @@
 #import "MeViewController.h"
 #import "MyDetailViewController.h"
 
+#import "LDTableViewManager.h"
 #import "AppDelegate.h"
 #import "LDUserModel.h"
 
-@implementation MeViewCell
-
-- (void)prepareForReuse
-{
-    
-}
-
-@end
-
-
-@interface MeViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MeViewController ()<LDTableViewManagerProtocol>
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -32,6 +23,7 @@
 @property (strong, nonatomic) LDUserModel *profile;
 @property (strong, nonatomic) NSArray *itemArray;
 @property (strong, nonatomic) NSArray *nextClassArray;
+@property (strong, nonatomic) LDTableViewManager *tableManager;
 
 @end
 
@@ -43,7 +35,18 @@ static NSString *meCellIdentifier = @"MeViewCell";
 {
     [super viewDidLoad];
     
+    self.meTableView.delegate = self.tableManager;
+    self.meTableView.dataSource = self.tableManager;
+    
     [self setProfileView:self.profile];
+}
+
+- (LDTableViewManager *)tableManager
+{
+    if (!_tableManager) {
+        _tableManager = [[LDTableViewManager alloc] initWithTableView:self.meTableView viewController:self itemArray:self.itemArray nextClassArray:self.nextClassArray];
+    }
+    return _tableManager;
 }
 
 - (LDUserModel *)profile
@@ -70,10 +73,14 @@ static NSString *meCellIdentifier = @"MeViewCell";
     return _nextClassArray;
 }
 
-- (Class)nextClassForRow:(NSInteger)row
+- (NSString *)cellIdentifier
 {
-    Class nextClass = NSClassFromString(self.nextClassArray[row]);
-    return nextClass;
+    return @"MeCellIdentifier";
+}
+
+- (CGFloat)cellHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 
 - (void)setProfileView:(LDUserModel *)profile
@@ -82,7 +89,7 @@ static NSString *meCellIdentifier = @"MeViewCell";
     NSString *userId = profile.userid;
     NSString *avatarUrl = profile.avatar;
     
-    self.avatarImageView.image = [UIImage imageWithContentsOfFile:avatarUrl];
+    self.avatarImageView.image = [UIImage imageWithData:[LDFileManager dataFromPath:avatarUrl]];
     self.nameLabel.text = name;
     self.idLabel.text = userId;
     
@@ -101,6 +108,8 @@ static NSString *meCellIdentifier = @"MeViewCell";
     MyDetailViewController *viewController = [[MyDetailViewController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
+
+/*
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -122,6 +131,7 @@ static NSString *meCellIdentifier = @"MeViewCell";
     UIViewController *nextVC = [[nextClass alloc] init];
     [self.navigationController pushViewController:nextVC animated:YES];
 }
+ */
 
 @end
 

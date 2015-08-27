@@ -20,6 +20,8 @@
 		603071551B8C6CD8003EF934 /* MyVisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603071531B8C6CD8003EF934 /* MyVisitViewController.m */; };
 		603071561B8C6CD8003EF934 /* MyVisitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603071541B8C6CD8003EF934 /* MyVisitViewController.xib */; };
 		6030715A1B8C6CF1003EF934 /* MyFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 603071581B8C6CF1003EF934 /* MyFollowViewController.m */; };
+		604D2CFE1B8F150A00709C90 /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604D2CFC1B8F150A00709C90 /* ResetPasswordViewController.m */; };
+		604D2CFF1B8F150A00709C90 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 604D2CFD1B8F150A00709C90 /* ResetPasswordViewController.xib */; };
 		605844161B86F1E300C925AC /* LDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 605844151B86F1E300C925AC /* LDUserModel.m */; };
 		605844191B86F3C200C925AC /* LDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 605844181B86F3C200C925AC /* LDFileManager.m */; };
 		607540DC1B71FCF80070E215 /* FollowMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607540DB1B71FCF80070E215 /* FollowMeViewController.xib */; };
@@ -91,6 +93,9 @@
 		603071541B8C6CD8003EF934 /* MyVisitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVisitViewController.xib; sourceTree = "<group>"; };
 		603071571B8C6CF1003EF934 /* MyFollowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFollowViewController.h; sourceTree = "<group>"; };
 		603071581B8C6CF1003EF934 /* MyFollowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFollowViewController.m; sourceTree = "<group>"; };
+		604D2CFB1B8F150A00709C90 /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		604D2CFC1B8F150A00709C90 /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordViewController.m; sourceTree = "<group>"; };
+		604D2CFD1B8F150A00709C90 /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		605844141B86F1E300C925AC /* LDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDUserModel.h; sourceTree = "<group>"; };
 		605844151B86F1E300C925AC /* LDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDUserModel.m; sourceTree = "<group>"; };
 		605844171B86F3C200C925AC /* LDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDFileManager.h; sourceTree = "<group>"; };
@@ -408,6 +413,9 @@
 				603071541B8C6CD8003EF934 /* MyVisitViewController.xib */,
 				603071571B8C6CF1003EF934 /* MyFollowViewController.h */,
 				603071581B8C6CF1003EF934 /* MyFollowViewController.m */,
+				604D2CFB1B8F150A00709C90 /* ResetPasswordViewController.h */,
+				604D2CFC1B8F150A00709C90 /* ResetPasswordViewController.m */,
+				604D2CFD1B8F150A00709C90 /* ResetPasswordViewController.xib */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -536,6 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				603071561B8C6CD8003EF934 /* MyVisitViewController.xib in Resources */,
+				604D2CFF1B8F150A00709C90 /* ResetPasswordViewController.xib in Resources */,
 				603071511B8C6A7C003EF934 /* LDRecordCell.xib in Resources */,
 				6023CC681B8C5454008F8369 /* SettingViewController.xib in Resources */,
 				60E6E22B1ADE383F0026CDC3 /* Main.storyboard in Resources */,
@@ -599,6 +608,7 @@
 				60E6E2BC1ADE46100026CDC3 /* Common.m in Sources */,
 				6023CC621B8C5421008F8369 /* MyDetailViewController.m in Sources */,
 				603071501B8C6A7C003EF934 /* LDRecordCell.m in Sources */,
+				604D2CFE1B8F150A00709C90 /* ResetPasswordViewController.m in Sources */,
 				60B8517B1B72195200D37F3F /* LDUserRequest.m in Sources */,
 				60E6E2281ADE383F0026CDC3 /* SecondViewController.m in Sources */,
 				5AD8FD4C1B88C747004213A6 /* UIImage+Additions.m in Sources */,

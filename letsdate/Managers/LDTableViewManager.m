@@ -102,6 +102,7 @@
             [self.viewController configureNextViewController:nextVC atIndexPath:indexPath];
         }
         if (self.viewController.navigationController) {
+            self.viewController.hidesBottomBarWhenPushed = YES;
             [self.viewController.navigationController pushViewController:nextVC animated:YES];
         } else if (self.viewController) {
             [self.viewController presentViewController:nextVC animated:YES completion:nil];

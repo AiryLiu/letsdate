@@ -88,17 +88,13 @@
 - (void)completeTransaction:(SKPaymentTransaction *)transaction {
     // Your application should implement these two methods.
     NSString *productIdentifier = transaction.payment.productIdentifier;
-    NSString *receipt = [[NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]] description];
+    NSData *oriReceipt = transaction.transactionReceipt;
+    NSData *receipt = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]];
     NSString *receiptBase64 = [[NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]] base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     if ([productIdentifier length] > 0) {
         // 向自己的服务器验证购买凭证
         NSLog(@"%@", receipt);
         NSLog(@"%@", receiptBase64);
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"receipt" delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil];
-        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
-        [alert textFieldAtIndex:0].height = 200;
-        [alert textFieldAtIndex:0].text = receiptBase64;
-        [alert show];
 //        [self verifyReceipt:receipt];
     }
     // Remove the transaction from the payment queue.

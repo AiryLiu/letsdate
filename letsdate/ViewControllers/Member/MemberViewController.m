@@ -7,7 +7,13 @@
 //
 
 #import "MemberViewController.h"
+#import "StoreUtil.h"
 
 @implementation MemberViewController
+
+- (IBAction)buyBtnClicked:(UIButton *)sender
+{
+    [StoreUtil buyProduct:@"chat0001"];
+}
 
 @end

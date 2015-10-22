@@ -13,6 +13,7 @@
 #import "AppDelegate.h"
 #import "LDUserModel.h"
 
+
 @interface MeViewController ()<LDTableViewManagerProtocol>
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -75,7 +76,7 @@ static NSString *meCellIdentifier = @"MeViewCell";
 
 - (NSString *)cellIdentifier
 {
-    return @"MeCellIdentifier";
+    return meCellIdentifier;
 }
 
 - (CGFloat)cellHeightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -106,11 +107,10 @@ static NSString *meCellIdentifier = @"MeViewCell";
 - (IBAction)myProfileButtonClicked:(UIButton *)sender
 {
     MyDetailViewController *viewController = [[MyDetailViewController alloc] init];
+    viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-
 /*
-
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.itemArray.count;
@@ -118,8 +118,8 @@ static NSString *meCellIdentifier = @"MeViewCell";
 
 - (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    MeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:meCellIdentifier];
-    cell.titleLabel.text = self.itemArray[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:meCellIdentifier];
+    cell.textLabel.text = self.itemArray[indexPath.row];
     return cell;
 }
 
@@ -127,11 +127,12 @@ static NSString *meCellIdentifier = @"MeViewCell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    Class nextClass = [self nextClassForRow:indexPath.row];
+    Class nextClass = self.nextClassArray[indexPath.row];
     UIViewController *nextVC = [[nextClass alloc] init];
+    nextVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:nextVC animated:YES];
 }
- */
+*/
 
 @end
 

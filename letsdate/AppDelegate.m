@@ -43,10 +43,10 @@
     self.mainWindow = mainWindow;
     [self.mainWindow makeKeyAndVisible];
     
-    if (![LDUserModel isUserLogin]) {
-        // not login
-        [AppDelegate showRegister];
-    }
+//    if (![LDUserModel isUserLogin]) {
+//        // not login
+//        [AppDelegate showRegister];
+//    }
     return YES;
 }
 

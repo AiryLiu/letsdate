@@ -9,7 +9,7 @@
 #ifndef LiCaiShi_Common_h
 #define LiCaiShi_Common_h
 
-#define NETWORK 0
+#define NETWORK 1
 
 #define ONLINE  0
 
@@ -19,7 +19,7 @@
 
 #else
 
-#define kAPIBaseUrl @"http://192.168.2.6:80"
+#define kAPIBaseUrl @""//http://192.168.2.6:80
 
 #define FP_DEBUG                        1
 

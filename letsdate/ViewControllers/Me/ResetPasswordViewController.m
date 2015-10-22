@@ -45,7 +45,24 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)didInputAll
+{
+    BOOL didInputAll = (self.oriPwdTextField.text.length > 0 && self.curPwdTextField.text.length > 0 && self.rePwdTextField.text > 0);
+    return didInputAll;
+}
+
 - (void)resetButtonState:(UIButton *)button enable:(BOOL)enable
+{
+    if (enable) {
+        button.enabled = YES;
+        [button setBackgroundColor:[UIColor orangeColor]];
+    } else {
+        button.enabled = NO;
+        [button setBackgroundColor:[UIColor lightGrayColor]];
+    }
+}
+
+- (void)updateSaveButton
 {
     
 }

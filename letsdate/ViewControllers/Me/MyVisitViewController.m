@@ -8,6 +8,8 @@
 
 #import "MyVisitViewController.h"
 
+#import "LDTableViewManager.h"
+
 #import "LDRecordCell.h"
 
 @interface MyVisitViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -32,6 +34,8 @@
     // Do any additional setup after loading the view from its nib.
     [self setNavigationTitle:[self navigationBarTitle]];
     [self.tableView registerNib:[UINib nibWithNibName:[LDRecordCell nibName] bundle:[NSBundle bundleForClass:[LDRecordCell class]]] forCellReuseIdentifier:[LDRecordCell reuseIdentifier]];
+    
+    [self.tableView setTableHeaderView:[self tableHeaderView]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +46,11 @@
 - (NSString *)navigationBarTitle
 {
     return @"最近浏览";
+}
+
+- (UIView *)tableHeaderView
+{
+    return [LDTableViewManager defaultTableHeaderView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

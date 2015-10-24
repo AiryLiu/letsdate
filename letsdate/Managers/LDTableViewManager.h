@@ -18,6 +18,8 @@
 
 - (void)configurCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath;
 
+- (UIView *)tableHeaderView;
+
 - (void)configureNextViewController:(UIViewController *)viewController atIndexPath:(NSIndexPath *)indexPath;
 
 @end
@@ -31,5 +33,7 @@
 @property (strong, nonatomic) NSArray *nextClassArray;
 
 - (instancetype)initWithTableView:(UITableView *)tableView viewController:(UIViewController<LDTableViewManagerProtocol> *)viewController itemArray:(NSArray *)itemArray nextClassArray:(NSArray *)nextClassArray;
+
++ (UIView *)defaultTableHeaderView;
 
 @end

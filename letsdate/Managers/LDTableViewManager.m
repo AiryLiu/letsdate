@@ -18,7 +18,7 @@
         self.viewController = viewController;
         self.itemArray = itemArray;
         self.nextClassArray = nextClassArray;
-//        [self initialSetUp];
+        [self initialSetUp];
     }
     return self;
 }
@@ -26,9 +26,17 @@
 - (void)initialSetUp
 {
     [self.tableView registerClass:[self cellClass] forCellReuseIdentifier:[self cellIdentifier]];
-    UINib *cellNib = [UINib nibWithNibName:[self cellNibName] bundle:[NSBundle mainBundle]];
-    if (cellNib) {
-        [self.tableView registerNib:cellNib forCellReuseIdentifier:[self cellIdentifier]];
+    NSString *cellNibName = [self cellNibName];
+    if (cellNibName) {
+        UINib *cellNib = [UINib nibWithNibName:cellNibName bundle:[NSBundle mainBundle]];
+        if (cellNib) {
+            [self.tableView registerNib:cellNib forCellReuseIdentifier:[self cellIdentifier]];
+        }
+    }
+    
+    // set table header
+    if ([self.viewController respondsToSelector:@selector(tableHeaderView)]) {
+        self.tableView.tableHeaderView = [self.viewController tableHeaderView];
     }
 }
 
@@ -83,8 +91,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor whiteColor];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+        cell.textLabel.font = [UIFont systemFontOfSize:17.0];
     }
+    
+    if ([self.viewController respondsToSelector:@selector(configurCell:forRowAtIndexPath:)]) {
+        [self.viewController configurCell:cell forRowAtIndexPath:indexPath];
+    }
+    
     cell.textLabel.text = self.itemArray[indexPath.row];
     
     return cell;
@@ -110,4 +123,10 @@
     }
 }
 
++ (UIView *)defaultTableHeaderView
+{
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 15)];
+    view.backgroundColor = [UIColor clearColor];
+    return view;
+}
 @end

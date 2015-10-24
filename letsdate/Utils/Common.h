@@ -19,7 +19,7 @@
 
 #else
 
-#define kAPIBaseUrl @""//http://192.168.2.6:80
+#define kAPIBaseUrl @"http://123.56.148.153"//http://192.168.2.6:80
 
 #define FP_DEBUG                        1
 

@@ -84,6 +84,13 @@ static NSString *meCellIdentifier = @"MeViewCell";
     return 44;
 }
 
+- (void)configurCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont systemFontOfSize:17.0];
+}
+
 - (void)setProfileView:(LDUserModel *)profile
 {
     NSString *name = profile.alias;
@@ -110,29 +117,6 @@ static NSString *meCellIdentifier = @"MeViewCell";
     viewController.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-/*
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.itemArray.count;
-}
-
-- (UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:meCellIdentifier];
-    cell.textLabel.text = self.itemArray[indexPath.row];
-    return cell;
-}
-
-- (void)tableView:(nonnull UITableView *)tableView didSelectRowAtIndexPath:(nonnull NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    Class nextClass = self.nextClassArray[indexPath.row];
-    UIViewController *nextVC = [[nextClass alloc] init];
-    nextVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:nextVC animated:YES];
-}
-*/
 
 @end
 

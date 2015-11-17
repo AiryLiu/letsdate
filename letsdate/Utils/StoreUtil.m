@@ -93,9 +93,7 @@
     NSString *receiptBase64 = [[NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]] base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     if ([productIdentifier length] > 0) {
         // 向自己的服务器验证购买凭证
-        NSLog(@"%@", receipt);
-        NSLog(@"%@", receiptBase64);
-//        [self verifyReceipt:receipt];
+        
     }
     // Remove the transaction from the payment queue.
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];

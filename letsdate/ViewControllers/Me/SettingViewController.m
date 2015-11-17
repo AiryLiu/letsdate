@@ -40,6 +40,8 @@
     
     self.tableView.dataSource = self.tableManager;
     self.tableView.delegate = self.tableManager;
+    
+//    self.tableView.tableHeaderView = [self tableHeaderView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +55,11 @@
         _tableManager = [[LDTableViewManager alloc] initWithTableView:self.tableView viewController:self itemArray:self.itemArray nextClassArray:self.nextClassArray];
     }
     return _tableManager;
+}
+
+- (UIView *)tableHeaderView
+{
+    return [LDTableViewManager defaultTableHeaderView];
 }
 
 - (NSArray *)itemArray
@@ -79,6 +86,13 @@
 - (CGFloat)cellHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44;
+}
+
+- (void)configurCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.backgroundColor = [UIColor whiteColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont systemFontOfSize:17.0];
 }
 
 - (void)configureNextViewController:(UIViewController *)viewController

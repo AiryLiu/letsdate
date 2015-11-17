@@ -59,6 +59,8 @@
 		60E6E3331ADE65BC0026CDC3 /* MemberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E3321ADE65BC0026CDC3 /* MemberViewController.m */; };
 		60E6E3361ADE65CA0026CDC3 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E3351ADE65CA0026CDC3 /* MessageViewController.m */; };
 		60E6E3391ADE65DB0026CDC3 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E3381ADE65DB0026CDC3 /* ActivityViewController.m */; };
+		787516741BFB39DA008B624D /* HpLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 787516731BFB39DA008B624D /* HpLocationManager.m */; };
+		787516761BFB3A1C008B624D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787516751BFB3A1C008B624D /* CoreLocation.framework */; };
 		789772541BFB0E4700C25D3F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897722A1BFB0E4700C25D3F /* MJRefreshAutoFooter.m */; };
 		789772551BFB0E4700C25D3F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897722C1BFB0E4700C25D3F /* MJRefreshBackFooter.m */; };
 		789772561BFB0E4700C25D3F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897722E1BFB0E4700C25D3F /* MJRefreshComponent.m */; };
@@ -190,6 +192,9 @@
 		60E6E3351ADE65CA0026CDC3 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		60E6E3371ADE65DB0026CDC3 /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
 		60E6E3381ADE65DB0026CDC3 /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		787516721BFB39DA008B624D /* HpLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpLocationManager.h; sourceTree = "<group>"; };
+		787516731BFB39DA008B624D /* HpLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpLocationManager.m; sourceTree = "<group>"; };
+		787516751BFB3A1C008B624D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		789772291BFB0E4700C25D3F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		7897722A1BFB0E4700C25D3F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		7897722B1BFB0E4700C25D3F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -237,6 +242,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				787516761BFB3A1C008B624D /* CoreLocation.framework in Frameworks */,
 				5A79210B1BD1F49600FA79DA /* StoreKit.framework in Frameworks */,
 				60E6E2E51ADE4F7D0026CDC3 /* CFNetwork.framework in Frameworks */,
 				F35DA152E9544998B6258E8D /* libPods.a in Frameworks */,
@@ -519,9 +525,19 @@
 			path = Activity;
 			sourceTree = "<group>";
 		};
+		787516711BFB39DA008B624D /* HpLocation */ = {
+			isa = PBXGroup;
+			children = (
+				787516721BFB39DA008B624D /* HpLocationManager.h */,
+				787516731BFB39DA008B624D /* HpLocationManager.m */,
+			);
+			path = HpLocation;
+			sourceTree = "<group>";
+		};
 		789771E61BFB0E2900C25D3F /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				787516711BFB39DA008B624D /* HpLocation */,
 				789772271BFB0E4700C25D3F /* MJRefresh */,
 			);
 			path = 3rdParty;
@@ -623,6 +639,7 @@
 		EEC8057D1B8C4721ADBCA051 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				787516751BFB3A1C008B624D /* CoreLocation.framework */,
 				5A79210A1BD1F49600FA79DA /* StoreKit.framework */,
 				AC35FE9113D847B994085153 /* libPods.a */,
 			);
@@ -789,6 +806,7 @@
 				605844191B86F3C200C925AC /* LDFileManager.m in Sources */,
 				60E6E3361ADE65CA0026CDC3 /* MessageViewController.m in Sources */,
 				603071551B8C6CD8003EF934 /* MyVisitViewController.m in Sources */,
+				787516741BFB39DA008B624D /* HpLocationManager.m in Sources */,
 				7897725A1BFB0E4700C25D3F /* MJRefreshAutoNormalFooter.m in Sources */,
 				6030715A1B8C6CF1003EF934 /* MyFollowViewController.m in Sources */,
 				60A6A9311B8497CE00D7B643 /* CommonButton.m in Sources */,

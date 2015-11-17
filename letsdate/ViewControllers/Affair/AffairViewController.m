@@ -9,6 +9,7 @@
 #import "AffairViewController.h"
 #import "MJRefresh.h"
 #import "UIImageView+WebCache.h"
+#import "HpLocationManager.h"
 
 @implementation AffairCollectionCell
 
@@ -27,9 +28,12 @@ static CGFloat const AffairColumn = 4.0;
 @interface AffairViewController()<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) UIButton *rightBarButton;
 
 @property (nonatomic, strong) NSMutableArray *personArray;
 @property (nonatomic, assign) NSInteger currentPage;
+
+@property (nonatomic, strong) NSString *currentLocation;
 
 @end
 
@@ -38,12 +42,18 @@ static CGFloat const AffairColumn = 4.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self setUpData];
+    [self setUpViews];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationDidChanged:) name:HpLocationDidChangedNotifation object:nil];
+    
+    [self startLocation];
     
     __weak typeof(self) weakSelf = self;
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.currentPage = 0;
-        [weakSelf requestAffairData:0 pageSize:12];
+        [weakSelf requestAffairDataWithLocation:weakSelf.currentLocation pageNo:0 pageSize:12];
     }];
     
     [self.collectionView.mj_header beginRefreshing];
@@ -51,15 +61,58 @@ static CGFloat const AffairColumn = 4.0;
     // 上拉刷新
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.currentPage++;
-        [weakSelf requestAffairData:weakSelf.currentPage pageSize:12];
+        [weakSelf requestAffairDataWithLocation:weakSelf.currentLocation pageNo:weakSelf.currentPage pageSize:12];
     }];
     // 默认先隐藏footer
     self.collectionView.mj_footer.hidden = YES;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)setUpData
 {
     self.personArray = [@[] mutableCopy];
+    self.currentLocation = @"";
+    self.currentPage = 0;
+}
+
+- (void)setUpViews
+{
+    UIButton *rightBarBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBarBtn.frame = CGRectMake(0, 0, 60, 44);
+    rightBarBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
+    [rightBarBtn setTitle:@"北京" forState:UIControlStateNormal];
+    [rightBarBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [rightBarBtn addTarget:self action:@selector(rightBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self setRightBarItem:rightBarBtn];
+    _rightBarButton = rightBarBtn;
+}
+
+- (void)rightBarButtonClicked:(UIButton *)sender
+{
+    /* select location */
+    [self startLocation];
+}
+
+- (void)startLocation
+{
+    [[HpLocationManager sharedInstance] startUpdatingLocation];
+}
+
+- (void)locationDidChanged:(NSNotification *)notification
+{
+    // HpLocationNotification
+    if ([notification.userInfo objectForKey:@"location"]) {
+        NSString *location = notification.userInfo[@"location"];
+        [_rightBarButton setTitle:location forState:UIControlStateNormal];
+        
+        // reload data
+        [self.collectionView.mj_header beginRefreshing];
+    }
+    
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -74,10 +127,6 @@ static CGFloat const AffairColumn = 4.0;
     AffairCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     NSDictionary *person = self.personArray[indexPath.item];
-    
-    NSError *error;
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:person[@"img"]] options:NSDataReadingUncached error:&error];
-    UIImage *image = [UIImage imageWithData:data];
     
     [cell setPhotoWithUrl:person[@"img"] title:person[@"title"]];
     
@@ -102,7 +151,7 @@ static CGFloat const AffairColumn = 4.0;
 }
 
 #pragma mark - network
-- (void)requestAffairData:(NSInteger)pageNo pageSize:(NSInteger)pageSize
+- (void)requestAffairDataWithLocation:(NSString *)location pageNo:(NSInteger)pageNo pageSize:(NSInteger)pageSize
 {
     __weak typeof(self) weakSelf = self;
     

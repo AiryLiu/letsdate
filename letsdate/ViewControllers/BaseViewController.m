@@ -68,6 +68,17 @@
     self.navigationItem.hidesBackButton = YES;
 }
 
+- (void)setLeftBarItem:(UIButton *)button
+{
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.hidesBackButton = YES;
+}
+
+- (void)setRightBarItem:(UIButton *)button
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+}
+
 - (void)goBack:(id)sender
 {
     if (self.navigationController.topViewController == self) {

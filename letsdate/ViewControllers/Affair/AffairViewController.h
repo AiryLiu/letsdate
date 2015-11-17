@@ -8,6 +8,17 @@
 
 #import "BaseViewController.h"
 
+@interface AffairCollectionCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UIImageView *photo;
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
+- (void)setPhotoWithUrl:(NSString *)photoUrl title:(NSString *)title;
+
+@end
+
+
+
 @interface AffairViewController : BaseViewController
 
 @end

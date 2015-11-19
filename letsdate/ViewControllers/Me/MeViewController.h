@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface MeViewController : BaseViewController
-
++ (UIStoryboard *)meStoryBoard;
 @end

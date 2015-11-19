@@ -32,6 +32,12 @@ static NSString *meCellIdentifier = @"MeViewCell";
 
 @implementation MeViewController
 
++ (UIStoryboard *)meStoryBoard
+{
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"me" bundle:[NSBundle mainBundle]];
+    return storyBoard;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -113,9 +119,9 @@ static NSString *meCellIdentifier = @"MeViewCell";
 
 - (IBAction)myProfileButtonClicked:(UIButton *)sender
 {
-    MyDetailViewController *viewController = [[MyDetailViewController alloc] init];
-    viewController.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:viewController animated:YES];
+    MyDetailViewController *detailVC = [[MeViewController meStoryBoard] instantiateViewControllerWithIdentifier:@"MyDetailViewController"];
+    detailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 @end

@@ -1380,7 +1380,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="YxH-Yg-jpY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="我是男人">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1395,7 +1395,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="w9h-NL-cv9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="我是女人">
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1447,15 +1447,28 @@
                                     <segue destination="UbH-6U-uYX" kind="presentation" identifier="sRegisterLogin" id="kk0-x0-oXL"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择年龄" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-yc-03b">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3XJ-gL-6Lt">
                                 <rect key="frame" x="16" y="84" width="288" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请选择年龄" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Yrj-yc-03b">
+                                        <rect key="frame" x="5" y="0.0" width="278" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="kvO-fW-UZB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="kvO-fW-UZB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yrj-yc-03b" secondAttribute="trailing" constant="5" id="OSZ-Oq-8lY"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yrj-yc-03b" secondAttribute="bottom" id="YgK-Wf-2Wc"/>
+                                    <constraint firstItem="Yrj-yc-03b" firstAttribute="top" secondItem="3XJ-gL-6Lt" secondAttribute="top" id="YqB-JH-gfI"/>
+                                    <constraint firstAttribute="height" constant="44" id="e11-dM-DiF"/>
+                                    <constraint firstItem="Yrj-yc-03b" firstAttribute="leading" secondItem="3XJ-gL-6Lt" secondAttribute="leading" constant="5" id="tlh-en-oJX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
-                            </textField>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1463,21 +1476,21 @@
                             <constraint firstItem="ZSC-3d-Btv" firstAttribute="top" secondItem="kyj-hM-rPG" secondAttribute="bottom" id="4oS-TQ-uI2"/>
                             <constraint firstItem="VZ2-WG-bwn" firstAttribute="leading" secondItem="4Bl-NG-aeb" secondAttribute="trailing" constant="16" id="6Hq-Tl-ANv"/>
                             <constraint firstItem="kyj-hM-rPG" firstAttribute="top" secondItem="bvF-VS-BIz" secondAttribute="top" id="87B-Bd-yfz"/>
-                            <constraint firstItem="Yrj-yc-03b" firstAttribute="leading" secondItem="bvF-VS-BIz" secondAttribute="leading" constant="16" id="9fh-l2-Pdm"/>
-                            <constraint firstAttribute="trailing" secondItem="Yrj-yc-03b" secondAttribute="trailing" constant="16" id="Ayp-h3-6JO"/>
-                            <constraint firstItem="Yrj-yc-03b" firstAttribute="top" secondItem="pZd-AS-xoV" secondAttribute="bottom" constant="20" id="SD7-HI-08z"/>
+                            <constraint firstItem="3XJ-gL-6Lt" firstAttribute="leading" secondItem="bvF-VS-BIz" secondAttribute="leading" constant="16" id="Jzo-0o-amE"/>
+                            <constraint firstItem="4Bl-NG-aeb" firstAttribute="top" secondItem="3XJ-gL-6Lt" secondAttribute="bottom" constant="16" id="RNh-wz-3gB"/>
                             <constraint firstItem="Hz8-aY-GbW" firstAttribute="leading" secondItem="bvF-VS-BIz" secondAttribute="leading" constant="16" id="T5b-yl-5E6"/>
                             <constraint firstItem="Hz8-aY-GbW" firstAttribute="top" secondItem="4Bl-NG-aeb" secondAttribute="bottom" constant="16" id="WBy-KR-vFd"/>
                             <constraint firstItem="kyj-hM-rPG" firstAttribute="leading" secondItem="bvF-VS-BIz" secondAttribute="leading" id="Z67-kH-TSF"/>
                             <constraint firstItem="4Bl-NG-aeb" firstAttribute="leading" secondItem="bvF-VS-BIz" secondAttribute="leading" constant="16" id="ZTr-wJ-k3O"/>
-                            <constraint firstItem="4Bl-NG-aeb" firstAttribute="top" secondItem="Yrj-yc-03b" secondAttribute="bottom" constant="16" id="ag0-4h-B3s"/>
+                            <constraint firstItem="3XJ-gL-6Lt" firstAttribute="top" secondItem="pZd-AS-xoV" secondAttribute="bottom" constant="20" id="b3t-w6-EpF"/>
                             <constraint firstAttribute="trailing" secondItem="VZ2-WG-bwn" secondAttribute="trailing" constant="16" id="bh9-Pe-RXh"/>
                             <constraint firstItem="ZSC-3d-Btv" firstAttribute="top" secondItem="ouY-nR-oa0" secondAttribute="bottom" constant="8" id="bup-ch-giG"/>
+                            <constraint firstAttribute="trailing" secondItem="3XJ-gL-6Lt" secondAttribute="trailing" constant="16" id="c0r-2f-Ql1"/>
                             <constraint firstItem="VZ2-WG-bwn" firstAttribute="leading" secondItem="4Bl-NG-aeb" secondAttribute="trailing" constant="16" id="cNK-o3-1s4"/>
                             <constraint firstAttribute="trailing" secondItem="kyj-hM-rPG" secondAttribute="trailing" id="hfj-8P-zue"/>
                             <constraint firstItem="Gnz-rT-ZD1" firstAttribute="top" secondItem="VZ2-WG-bwn" secondAttribute="bottom" constant="15" id="mcx-Vl-w3l"/>
+                            <constraint firstItem="VZ2-WG-bwn" firstAttribute="top" secondItem="4Bl-NG-aeb" secondAttribute="top" id="nXi-eV-PFW"/>
                             <constraint firstAttribute="trailing" secondItem="ouY-nR-oa0" secondAttribute="trailing" constant="16" id="nh3-VI-3gx"/>
-                            <constraint firstItem="VZ2-WG-bwn" firstAttribute="top" secondItem="Yrj-yc-03b" secondAttribute="bottom" constant="16" id="oAw-aS-KKW"/>
                             <constraint firstItem="Gnz-rT-ZD1" firstAttribute="leading" secondItem="Hz8-aY-GbW" secondAttribute="trailing" id="pQ6-nH-Ef3"/>
                             <constraint firstAttribute="trailing" secondItem="Gnz-rT-ZD1" secondAttribute="trailing" constant="16" id="yRh-G7-C1R"/>
                         </constraints>
@@ -2214,7 +2227,7 @@
         <image name="btn_orange" width="10" height="10"/>
         <image name="icon_activity" width="25" height="25"/>
         <image name="icon_affair" width="25" height="25"/>
-        <image name="icon_back" width="25" height="25"/>
+        <image name="icon_back" width="12" height="19"/>
         <image name="icon_me" width="25" height="25"/>
         <image name="icon_member" width="25" height="25"/>
         <image name="icon_message" width="25" height="25"/>

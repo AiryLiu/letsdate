@@ -8,19 +8,28 @@
 
 #import "LDRequest.h"
 
+@interface LDRequest()
+
+@property (strong, nonatomic) NSString *path;
+
+@end
+
 @implementation LDRequest
 
-+ (NSURLSessionDataTask *)getFromPath:(NSString *)urlPath params:(NSDictionary *)paramDic success:(void (^)(id results, NSError *error))successBlock failure:(void (^)(id results, NSError *error))failureBlock
+- (NSInteger)getFromPath:(NSString *)urlPath params:(NSDictionary *)paramDic completion:(LDRequestCompletionBlock)completionBlock
 {
+    self.path = urlPath;
+    NSLog(@"REQUEST:%@, %@", urlPath, paramDic);
+    
 #if NETWORK
-    return [[LDApiClient sharedClient] GET:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
+    NSURLSessionDataTask *dataTask = [[LDApiClient sharedClient] GET:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
         NSError *error = nil;
         if ([JSON isKindOfClass:[NSDictionary class]]) {
             NSString *status = [JSON objectForKey:@"status"];
             id results = [JSON objectForKey:@"result"];
             if ([status isEqualToString:LD_QUERY_STATUS_SUCCESS]) {
-                if (successBlock) {
-                    successBlock(results, nil);
+                if (completionBlock) {
+                    completionBlock(results, nil);
                 }
             } else {
                 error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
@@ -29,34 +38,37 @@
             error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
         }
         
-        if (error&&failureBlock) {
-            failureBlock(nil, error);
+        if (error&&completionBlock) {
+            completionBlock(nil, error);
         }
         
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        if (failureBlock) {
-            failureBlock(nil, error);
+        if (completionBlock) {
+            completionBlock(nil, error);
         }
     }];
+    return dataTask.taskIdentifier;
 #else
-    if (successBlock) {
-        successBlock(@{}, nil);
+    if (completionBlock) {
+        completionBlock(@{}, nil);
     }
-    return nil;
+    return 0;
 #endif
 }
 
-+ (NSURLSessionDataTask *)postToPath:(NSString *)urlPath params:(NSDictionary *)paramDic success:(void (^)(id results, NSError *error))successBlock failure:(void (^)(id results, NSError *error))failureBlock
+- (NSInteger)postToPath:(NSString *)urlPath params:(NSDictionary *)paramDic completion:(LDRequestCompletionBlock)completionBlock
 {
+    self.path = urlPath;
+    
 #if NETWORK
-    return [[LDApiClient sharedClient] POST:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
+    NSURLSessionDataTask *dataTask = [[LDApiClient sharedClient] POST:urlPath parameters:paramDic success:^(NSURLSessionDataTask * __unused task, id JSON) {
         NSError *error = nil;
         if ([JSON isKindOfClass:[NSDictionary class]]) {
             NSString *status = [JSON objectForKey:@"status"];
             id results = [JSON objectForKey:@"result"];
             if ([status isEqualToString:LD_QUERY_STATUS_SUCCESS]) {
-                if (successBlock) {
-                    successBlock(results, nil);
+                if (completionBlock) {
+                    completionBlock(results, nil);
                 }
             } else {
                 error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
@@ -65,19 +77,20 @@
             error = [NSError errorWithDomain:LD_QUERY_ERROR_DOMAIN code:-1 userInfo:JSON];
         }
         
-        if (error&&failureBlock) {
-            failureBlock(nil, error);
+        if (error&&completionBlock) {
+            completionBlock(nil, error);
         }
     } failure:^(NSURLSessionDataTask *__unused task, NSError *error) {
-        if (failureBlock) {
-            failureBlock(nil, error);
+        if (completionBlock) {
+            completionBlock(nil, error);
         }
     }];
+    return dataTask.taskIdentifier;
 #else
-    if (successBlock) {
-        successBlock(@{}, nil);
+    if (completionBlock) {
+        completionBlock(@{}, nil);
     }
-    return nil;
+    return 0;
 #endif
 }
 

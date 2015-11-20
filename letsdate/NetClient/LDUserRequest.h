@@ -7,19 +7,26 @@
 //
 
 #import "LDRequest.h"
+#import "LDUserModel.h"
 
 @interface LDUserRequest : LDRequest
 
-+ (NSURLSessionDataTask *)loginWithUserId:(NSString *)userId
-               password:(NSString *)password
-            deviceToken:(NSString *)deviceToken
-                success:(void (^)(id results, NSError *error))successBlock
-                failure:(void (^)(id results, NSError *error))failureBlock;
+- (NSInteger)loginWithUserId:(NSString *)userId
+                    password:(NSString *)password
+                 deviceToken:(NSString *)deviceToken
+                  completion:(LDRequestCompletionBlock)completionBlock;
 
-+ (NSURLSessionDataTask *)registerWithPassword:(NSString *)password
-                         sex:(NSString *)sex
-                         age:(NSString *)age
-                     success:(void (^)(id results, NSError *error))successBlock
-                     failure:(void (^)(id results, NSError *error))failureBlock;
+- (NSInteger)registerWithPassword:(NSString *)password
+                              sex:(NSString *)sex
+                              age:(NSString *)age
+                       completion:(LDRequestCompletionBlock)completionBlock;
 
+- (NSInteger)resetPassword:(NSString *)userId password:(NSString *)pwd
+                completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)updateMyProfile:(LDUserModel *)profile
+                    completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)getMyProfile:(NSString *)userId
+                 completion:(LDRequestCompletionBlock)completionBlock;
 @end

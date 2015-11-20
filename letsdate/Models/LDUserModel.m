@@ -75,8 +75,8 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(self.city != nil){
         dictionary[@"city"] = self.city;
     }
-    if(self.avatar != nil){
-        dictionary[@"avatar"] = self.avatar;
+    if(self.image != nil){
+        dictionary[@"image"] = self.image;
     }
     if(self.vip != nil){
         dictionary[@"vip"] = self.vip;
@@ -179,8 +179,8 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(![dictionary[@"city"] isKindOfClass:[NSNull class]]){
         self.city = dictionary[@"city"];
     }
-    if(![dictionary[@"avatar"] isKindOfClass:[NSNull class]]){
-        self.avatar = dictionary[@"avatar"];
+    if(![dictionary[@"image"] isKindOfClass:[NSNull class]]){
+        self.image = dictionary[@"image"];
     }
     if(![dictionary[@"vip"] isKindOfClass:[NSNull class]]){
         self.vip = dictionary[@"vip"];
@@ -188,6 +188,28 @@ static NSString *const LDProfilePath = @"ld-profile.plist";
     if(![dictionary[@"fivestart"] isKindOfClass:[NSNull class]]){
         self.fivestart = dictionary[@"fivestart"];
     }
+}
+
+@end
+
+
+@implementation LDOtherModel
+
+- (void)refreshWithDictionary:(NSDictionary *)dictionary
+{
+    [super refreshWithDictionary:dictionary];
+    if (![dictionary[@"images"] isKindOfClass:[NSNull class]]) {
+        self.images = dictionary[@"images"];
+    }
+}
+
+- (NSDictionary *)toDictionary
+{
+    NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithDictionary:[super toDictionary]];
+    if (self.images != nil) {
+        dictionary[@"images"] = self.images;
+    }
+    return dictionary;
 }
 
 @end

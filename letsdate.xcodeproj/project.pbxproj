@@ -81,6 +81,9 @@
 		789772651BFB0E4700C25D3F /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 789772511BFB0E4700C25D3F /* UIScrollView+MJRefresh.m */; };
 		789772661BFB0E4700C25D3F /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 789772531BFB0E4700C25D3F /* UIView+MJExtension.m */; };
 		789B87C41BFDE26900D5488D /* me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789B87C31BFDE26900D5488D /* me.storyboard */; };
+		78E5764A1BFF01FD003A0515 /* LDListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E576491BFF01FD003A0515 /* LDListRequest.m */; };
+		78E5764D1BFF0772003A0515 /* LDFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E5764C1BFF0772003A0515 /* LDFriendRequest.m */; };
+		78E576531BFF1CC5003A0515 /* LDListItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E576521BFF1CC5003A0515 /* LDListItemModel.m */; };
 		F35DA152E9544998B6258E8D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC35FE9113D847B994085153 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +238,12 @@
 		789772521BFB0E4700C25D3F /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		789772531BFB0E4700C25D3F /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		789B87C31BFDE26900D5488D /* me.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = me.storyboard; sourceTree = "<group>"; };
+		78E576481BFF01FD003A0515 /* LDListRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDListRequest.h; sourceTree = "<group>"; };
+		78E576491BFF01FD003A0515 /* LDListRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDListRequest.m; sourceTree = "<group>"; };
+		78E5764B1BFF0772003A0515 /* LDFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDFriendRequest.h; sourceTree = "<group>"; };
+		78E5764C1BFF0772003A0515 /* LDFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDFriendRequest.m; sourceTree = "<group>"; };
+		78E576511BFF1CC5003A0515 /* LDListItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDListItemModel.h; sourceTree = "<group>"; };
+		78E576521BFF1CC5003A0515 /* LDListItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDListItemModel.m; sourceTree = "<group>"; };
 		AC35FE9113D847B994085153 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE18913996469CD718BF4965 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -397,6 +406,8 @@
 			children = (
 				605844141B86F1E300C925AC /* LDUserModel.h */,
 				605844151B86F1E300C925AC /* LDUserModel.m */,
+				78E576511BFF1CC5003A0515 /* LDListItemModel.h */,
+				78E576521BFF1CC5003A0515 /* LDListItemModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,6 +422,10 @@
 				60B851791B72195200D37F3F /* LDUserRequest.h */,
 				60B8517A1B72195200D37F3F /* LDUserRequest.m */,
 				60E6E3251ADE61B50026CDC3 /* ClientConfigure.h */,
+				78E576481BFF01FD003A0515 /* LDListRequest.h */,
+				78E576491BFF01FD003A0515 /* LDListRequest.m */,
+				78E5764B1BFF0772003A0515 /* LDFriendRequest.h */,
+				78E5764C1BFF0772003A0515 /* LDFriendRequest.m */,
 			);
 			path = NetClient;
 			sourceTree = "<group>";
@@ -796,6 +811,7 @@
 			files = (
 				7897725F1BFB0E4700C25D3F /* MJRefreshGifHeader.m in Sources */,
 				60E6E2C01ADE46100026CDC3 /* WebViewController.m in Sources */,
+				78E576531BFF1CC5003A0515 /* LDListItemModel.m in Sources */,
 				60DFB3111AF8D75300311D3A /* LoginViewController.m in Sources */,
 				60E6E2BC1ADE46100026CDC3 /* Common.m in Sources */,
 				789772651BFB0E4700C25D3F /* UIScrollView+MJRefresh.m in Sources */,
@@ -819,6 +835,7 @@
 				605844161B86F1E300C925AC /* LDUserModel.m in Sources */,
 				60E6E2221ADE383F0026CDC3 /* AppDelegate.m in Sources */,
 				607540E01B71FE000070E215 /* FollowMeViewController.m in Sources */,
+				78E5764A1BFF01FD003A0515 /* LDListRequest.m in Sources */,
 				60E6E3241ADE5D520026CDC3 /* LDRequest.m in Sources */,
 				60E6E3391ADE65DB0026CDC3 /* ActivityViewController.m in Sources */,
 				60E6E3331ADE65BC0026CDC3 /* MemberViewController.m in Sources */,
@@ -834,6 +851,7 @@
 				60DFB3141AF8D77E00311D3A /* RegisterFirstViewController.m in Sources */,
 				7897725C1BFB0E4700C25D3F /* MJRefreshBackGifFooter.m in Sources */,
 				789772541BFB0E4700C25D3F /* MJRefreshAutoFooter.m in Sources */,
+				78E5764D1BFF0772003A0515 /* LDFriendRequest.m in Sources */,
 				60A1F1831B8D8F4100365F93 /* LDTableViewManager.m in Sources */,
 				789772561BFB0E4700C25D3F /* MJRefreshComponent.m in Sources */,
 				7897725E1BFB0E4700C25D3F /* MJRefreshBackStateFooter.m in Sources */,

@@ -10,4 +10,17 @@
 
 @interface LDListItemModel : NSObject
 
+@property (nonatomic, strong) NSString *userid;
+@property (nonatomic, strong) NSString *alias;
+@property (nonatomic, strong) NSString *image;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (NSDictionary *)toDictionary;
+
+@end
+
+@interface LDMainListItemModel : LDListItemModel
+
+@property (nonatomic, strong) NSString *age;
+
 @end

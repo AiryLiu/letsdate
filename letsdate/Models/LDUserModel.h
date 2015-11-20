@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSString * sexatt;
 @property (nonatomic, strong) NSString * memessage;
 @property (nonatomic, strong) NSString * city;
-@property (nonatomic, strong) NSString * avatar;// 头像
+@property (nonatomic, strong) NSString * image;// 头像
 
 @property (nonatomic, strong) NSString * vip;
 @property (nonatomic, strong) NSString * fivestart;
@@ -51,5 +51,12 @@
 - (void)refreshWithDictionary:(NSDictionary *)dictionary;
 
 + (void)clearLocalProfile;
+
+@end
+
+
+@interface LDOtherModel : LDUserModel
+
+@property (nonatomic, strong) NSArray *images;
 
 @end

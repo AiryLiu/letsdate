@@ -81,7 +81,7 @@ static NSString *const sRegisterChoose = @"sRegisterChoose";
             self.registerProfile.bodylarge = value;
             break;
         case RegisterStepFour:
-            self.registerProfile.avatar = value;
+            self.registerProfile.image = value;
             break;
         default:
             break;
@@ -103,23 +103,26 @@ static NSString *const sRegisterChoose = @"sRegisterChoose";
     // make a temp password
     self.registerProfile.pwd = [self.registerProfile tempUserPassword];
     // query register
-    [LDUserRequest registerWithPassword:self.registerProfile.pwd sex:self.registerProfile.sex age:self.registerProfile.age success:^(id results, NSError *error) {
-        // success
-        NSString *userId = nil;// debug
-        if ([results isKindOfClass:[NSDictionary class]]) {
-            userId = [results objectForKey:@"userid"];
+    LDUserRequest *registerRequest = [[LDUserRequest alloc] init];
+    [registerRequest registerWithPassword:self.registerProfile.pwd sex:self.registerProfile.sex age:self.registerProfile.age completion:^(id results, NSError *error) {
+        if (!error) {
+            // success
+            NSString *userId = nil;// debug
+            if ([results isKindOfClass:[NSDictionary class]]) {
+                userId = [results objectForKey:@"userid"];
+            }
+            if (!userId) {
+                userId = @"1001";
+            }
+            weakSelf.registerProfile.userid = userId;
+            [weakSelf queryLogin:weakSelf.registerProfile];
+            // TODO: query update user profile
+            // [weakSelf queryUpdateProfile:];
+        } else {
+            // failed
+            [weakSelf.view hideHUDLoading];
+            [weakSelf.view showHUDMessage:@"注册失败" dismissAfter:2.0];
         }
-        if (!userId) {
-            userId = @"1001";
-        }
-        weakSelf.registerProfile.userid = userId;
-        [weakSelf queryLogin:weakSelf.registerProfile];
-        // TODO: query update user profile
-        // [weakSelf queryUpdateProfile:];
-    } failure:^(id results, NSError *error) {
-        // failed
-        [weakSelf.view hideHUDLoading];
-        [weakSelf.view showHUDMessage:@"注册失败" dismissAfter:2.0];
     }];
 }
 
@@ -128,31 +131,33 @@ static NSString *const sRegisterChoose = @"sRegisterChoose";
     NSString *userId = profile.userid;
     NSString *password = profile.pwd;
     __weak typeof(self) weakSelf = self;
-    [LDUserRequest loginWithUserId:userId password:password deviceToken:@"null" success:^(id results, NSError *error) {
-        // success
-        [weakSelf.view hideHUDLoading];
-        // save profile
-        if ([results isKindOfClass:[NSDictionary class]]) {
-            // save user profile to local
-            LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
-            profile.userid = userId;
-            profile.pwd = password;
-            [profile saveToLocal];
-            
-            // save avatar
-            weakSelf.registerProfile.avatar = [weakSelf saveAvatar:weakSelf.avatarImageView.image user:weakSelf.registerProfile];
-            
-            // TODO: move to queryUpdateProfile
-            [LDUserModel refreshLocalProfileWithDictionary:[weakSelf.registerProfile toDictionary]];
+    LDUserRequest *loginRequest = [[LDUserRequest alloc] init];
+    [loginRequest loginWithUserId:userId password:password deviceToken:@"null" completion:^(id results, NSError *error) {
+        if (!error) {
+            // success
+            [weakSelf.view hideHUDLoading];
+            // save profile
+            if ([results isKindOfClass:[NSDictionary class]]) {
+                // save user profile to local
+                LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
+                profile.userid = userId;
+                profile.pwd = password;
+                [profile saveToLocal];
+                
+                // save avatar
+                weakSelf.registerProfile.image = [weakSelf saveAvatar:weakSelf.avatarImageView.image user:weakSelf.registerProfile];
+                
+                // TODO: move to queryUpdateProfile
+                [LDUserModel refreshLocalProfileWithDictionary:[weakSelf.registerProfile toDictionary]];
+            }
+            [weakSelf.view showHUDMessage:@"登陆成功" dismissAfter:2.0 completion:^{
+                [AppDelegate swichToMainWindow];
+            }];
+        } else {
+            // failure
+            [weakSelf.view hideHUDLoading];
+            [weakSelf.view showHUDMessage:@"登陆失败" dismissAfter:2.0];
         }
-        [weakSelf.view showHUDMessage:@"登陆成功" dismissAfter:2.0 completion:^{
-            [AppDelegate swichToMainWindow];
-        }];
-        
-    } failure:^(id results, NSError *error) {
-        // failure
-        [weakSelf.view hideHUDLoading];
-        [weakSelf.view showHUDMessage:@"登陆失败" dismissAfter:2.0];
     }];
 }
 

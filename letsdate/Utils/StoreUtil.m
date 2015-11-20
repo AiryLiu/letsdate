@@ -110,12 +110,12 @@
 
 - (void)verifyReceipt:(NSString *)receipt
 {
-    [LDRequest postToPath:StoreVerifyURLTest params:@{@"receipt-data":receipt} success:^(id results, NSError *error) {
-        NSLog(@"Success%@", results);
-    } failure:^(id results, NSError *error) {
-        //
+    LDRequest *request = [[LDRequest alloc] init];
+    [request postToPath:StoreVerifyURLTest params:@{@"receipt-data":receipt} completion:^(id results, NSError *error) {
+        if (!error) {
+            NSLog(@"Success%@", results);
+        }
     }];
-    
 }
 
 @end

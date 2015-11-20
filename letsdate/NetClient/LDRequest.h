@@ -8,16 +8,16 @@
 
 #import "LDApiClient.h"
 
+typedef void(^LDRequestCompletionBlock)(id results, NSError *error);
+
 @interface LDRequest : NSObject
 
-+ (NSURLSessionDataTask *)getFromPath:(NSString *)urlPath
-                               params:(NSDictionary *)paramDic
-                              success:(void (^)(id results, NSError *error))successBlock
-                              failure:(void (^)(id results, NSError *error))failureBlock;
+- (NSInteger)getFromPath:(NSString *)urlPath
+                  params:(NSDictionary *)paramDic
+              completion:(LDRequestCompletionBlock)completionBlock;
 
-+ (NSURLSessionDataTask *)postToPath:(NSString *)urlPath
-                              params:(NSDictionary *)paramDic
-                             success:(void (^)(id results, NSError *error))successBlock
-                             failure:(void (^)(id results, NSError *error))failureBlock;
+- (NSInteger)postToPath:(NSString *)urlPath
+                 params:(NSDictionary *)paramDic
+             completion:(LDRequestCompletionBlock)completionBlock;
 
 @end

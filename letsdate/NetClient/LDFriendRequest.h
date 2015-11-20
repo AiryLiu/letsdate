@@ -7,7 +7,19 @@
 //
 
 #import "LDRequest.h"
+#import "LDUserModel.h"
 
 @interface LDFriendRequest : LDRequest
 
+- (NSInteger)getOtherProfile:(NSString *)userId otherId:(NSString *)otherId
+                 completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)followWithUserId:(NSString *)userId otherId:(NSString *)otherId
+                  completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)greetWithUserId:(NSString *)userId otherId:(NSString *)otherId
+                  completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)pullBlackWithUserId:(NSString *)userId otherId:(NSString *)otherId
+                  completion:(LDRequestCompletionBlock)completionBlock;
 @end

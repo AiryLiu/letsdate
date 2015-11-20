@@ -10,31 +10,64 @@
 
 @implementation LDUserRequest
 
-+ (NSURLSessionDataTask *)loginWithUserId:(NSString *)userId
-               password:(NSString *)password
-            deviceToken:(NSString *)deviceToken
-                success:(void (^)(id results, NSError *error))successBlock
-                failure:(void (^)(id results, NSError *error))failureBlock
+- (NSInteger)loginWithUserId:(NSString *)userId
+                    password:(NSString *)password
+                 deviceToken:(NSString *)deviceToken
+                  completion:(LDRequestCompletionBlock)completionBlock
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"userid":userId, @"pwd":password, @"token":deviceToken}];
-    return [LDRequest getFromPath:ACCOUNT_LOGIN params:params success:^(id results, NSError *error) {
+    return [self getFromPath:ACCOUNT_LOGIN params:params completion:^(id results, NSError *error) {
 #if !NETWORK
         // mock result
 #endif
-        if (successBlock) {
-            successBlock(results, error);
-        }
-    } failure:failureBlock];
+        completionBlock(results, error);
+    }];
 }
 
-+ (NSURLSessionDataTask *)registerWithPassword:(NSString *)password
-                         sex:(NSString *)sex
-                         age:(NSString *)age
-                     success:(void (^)(id results, NSError *error))successBlock
-                     failure:(void (^)(id results, NSError *error))failureBlock
+- (NSInteger)registerWithPassword:(NSString *)password
+                              sex:(NSString *)sex
+                              age:(NSString *)age
+                       completion:(LDRequestCompletionBlock)completionBlock
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"pwd":password, @"sex":sex, @"age":age}];
-    return [LDRequest getFromPath:ACCOUNT_REGIST params:params success:successBlock failure:failureBlock];
+    return [self getFromPath:ACCOUNT_REGIST params:params completion:completionBlock];
 }
+
+
+- (NSInteger)resetPassword:(NSString *)userId password:(NSString *)pwd
+                completion:(LDRequestCompletionBlock)completionBlock
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"userid":userId, @"pwd":pwd}];
+    return [self getFromPath:ACCOUNT_UPDATE_PWD params:params completion:completionBlock];
+}
+
+- (NSInteger)updateMyProfile:(LDUserModel *)profile
+                    completion:(LDRequestCompletionBlock)completionBlock
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:[profile toDictionary]];
+    return [self getFromPath:ACCOUNT_UPDATE_USER_MESSAGE params:params completion:completionBlock];
+}
+
+- (NSInteger)getMyProfile:(NSString *)userId
+                 completion:(LDRequestCompletionBlock)completionBlock
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"userid":userId}];
+    return [self getFromPath:ACCOUNT_GET_ME_MESSAGE params:params completion:^(id results, NSError *error) {
+        // success
+        if (!error) {
+            if ([results isKindOfClass:[NSDictionary class]]) {
+                LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
+                completionBlock(profile, nil);
+            } else {
+                NSError *error = [NSError errorWithDomain:@"LD_NET_ERROR_DATA" code:2001 userInfo:nil];
+                completionBlock(nil, error);
+            }
+        } else {
+            completionBlock(nil, error);
+        }
+    }];
+}
+
+
 
 @end

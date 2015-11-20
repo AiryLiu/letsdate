@@ -101,7 +101,7 @@ static NSString *meCellIdentifier = @"MeViewCell";
 {
     NSString *name = profile.alias;
     NSString *userId = profile.userid;
-    NSString *avatarUrl = profile.avatar;
+    NSString *avatarUrl = profile.image;
     
     self.avatarImageView.image = [UIImage imageWithData:[LDFileManager dataFromPath:avatarUrl]];
     self.nameLabel.text = name;

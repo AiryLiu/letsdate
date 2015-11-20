@@ -7,7 +7,12 @@
 //
 
 #import "LDRequest.h"
+#import "LDListItemModel.h"
 
 @interface LDListRequest : LDRequest
+
+- (NSInteger)getMainList:(NSInteger)pageNo area:(NSString *)area completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)getBlackList:(NSString *)userId completion:(LDRequestCompletionBlock)completionBlock;
 
 @end

@@ -31,6 +31,8 @@ static NSString *const ACCOUNT_IT_MESSAGE = @"/Account/ItMessage";// 他人详�
 
 static NSString *const ACCOUNT_AT_PEO = @"/Account/AtPeo";// 关注别人
 
+static NSString *const ACCOUNT_SAY_HELLO = @"/Account/SayHello";// 打招呼
+
 static NSString *const ACCOUNT_GET_BLACK = @"/Account/GetBlack";// 拉黑
 
 static NSString *const ACCOUNT_GET_BLACK_LIST = @"/Account/GetBlackList";// 拉黑列表

@@ -93,20 +93,22 @@
     
     __weak LoginViewController *weakSelf = self;
     [self.view showHUDLoading:@"加载中"];
-    [LDUserRequest loginWithUserId:userId password:password deviceToken:@"null" success:^(id results, NSError *error) {
-        // success
+    LDUserRequest *loginRequest = [[LDUserRequest alloc] init];
+    [loginRequest loginWithUserId:userId password:password deviceToken:@"null" completion:^(id results, NSError *error) {
         [weakSelf.view hideHUDLoading];
-        // save profile
-        if ([results isKindOfClass:[NSDictionary class]]) {
-            LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
-            profile.userid = userId;
-            profile.pwd = password;
-            [profile saveToLocal];
+        if (!error) {
+            // success
+            // save profile
+            if ([results isKindOfClass:[NSDictionary class]]) {
+                LDUserModel *profile = [[LDUserModel alloc] initWithDictionary:results];
+                profile.userid = userId;
+                profile.pwd = password;
+                [profile saveToLocal];
+            }
+            [AppDelegate swichToMainWindow];
+        } else {
+            // failure
         }
-        [AppDelegate swichToMainWindow];
-    } failure:^(id results, NSError *error) {
-        // failure
-        [weakSelf.view hideHUDLoading];
     }];
 }
 

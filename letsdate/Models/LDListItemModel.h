@@ -24,3 +24,17 @@
 @property (nonatomic, strong) NSString *age;
 
 @end
+
+@interface LDVisitListItemModel : LDListItemModel
+
+@property (nonatomic, strong) NSString *memessage;
+
+@end
+
+@interface LDComeListItemModel : LDListItemModel
+
+@property (nonatomic, strong) NSString *age;
+@property (nonatomic, strong) NSString *sex;
+@property (nonatomic, strong) NSString *times;
+
+@end

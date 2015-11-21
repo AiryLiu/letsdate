@@ -35,7 +35,6 @@
 		60DFB3111AF8D75300311D3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3101AF8D75300311D3A /* LoginViewController.m */; };
 		60DFB3141AF8D77E00311D3A /* RegisterFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3131AF8D77E00311D3A /* RegisterFirstViewController.m */; };
 		60DFB3171AF8D7A300311D3A /* RegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3161AF8D7A300311D3A /* RegisterStepOneViewController.m */; };
-		60DFB31A1AF8D7B200311D3A /* RegisterStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DFB3191AF8D7B200311D3A /* RegisterStepTwoViewController.m */; };
 		60E6E21F1ADE383F0026CDC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E21E1ADE383F0026CDC3 /* main.m */; };
 		60E6E2221ADE383F0026CDC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E2211ADE383F0026CDC3 /* AppDelegate.m */; };
 		60E6E2251ADE383F0026CDC3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E2241ADE383F0026CDC3 /* FirstViewController.m */; };
@@ -61,6 +60,8 @@
 		60E6E3391ADE65DB0026CDC3 /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E6E3381ADE65DB0026CDC3 /* ActivityViewController.m */; };
 		787516741BFB39DA008B624D /* HpLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 787516731BFB39DA008B624D /* HpLocationManager.m */; };
 		787516761BFB3A1C008B624D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787516751BFB3A1C008B624D /* CoreLocation.framework */; };
+		788A3B1A1C000A52007C1028 /* LDChatRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A3B191C000A52007C1028 /* LDChatRequest.m */; };
+		788A3B1D1C000BA5007C1028 /* LDChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 788A3B1C1C000BA5007C1028 /* LDChatModel.m */; };
 		789772541BFB0E4700C25D3F /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897722A1BFB0E4700C25D3F /* MJRefreshAutoFooter.m */; };
 		789772551BFB0E4700C25D3F /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897722C1BFB0E4700C25D3F /* MJRefreshBackFooter.m */; };
 		789772561BFB0E4700C25D3F /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 7897722E1BFB0E4700C25D3F /* MJRefreshComponent.m */; };
@@ -146,8 +147,6 @@
 		60DFB3131AF8D77E00311D3A /* RegisterFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterFirstViewController.m; sourceTree = "<group>"; };
 		60DFB3151AF8D7A300311D3A /* RegisterStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterStepOneViewController.h; sourceTree = "<group>"; };
 		60DFB3161AF8D7A300311D3A /* RegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterStepOneViewController.m; sourceTree = "<group>"; };
-		60DFB3181AF8D7B200311D3A /* RegisterStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterStepTwoViewController.h; sourceTree = "<group>"; };
-		60DFB3191AF8D7B200311D3A /* RegisterStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterStepTwoViewController.m; sourceTree = "<group>"; };
 		60E6E2191ADE383E0026CDC3 /* letsdate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = letsdate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60E6E21D1ADE383F0026CDC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60E6E21E1ADE383F0026CDC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -199,6 +198,10 @@
 		787516721BFB39DA008B624D /* HpLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HpLocationManager.h; sourceTree = "<group>"; };
 		787516731BFB39DA008B624D /* HpLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HpLocationManager.m; sourceTree = "<group>"; };
 		787516751BFB3A1C008B624D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		788A3B181C000A52007C1028 /* LDChatRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDChatRequest.h; sourceTree = "<group>"; };
+		788A3B191C000A52007C1028 /* LDChatRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDChatRequest.m; sourceTree = "<group>"; };
+		788A3B1B1C000BA5007C1028 /* LDChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDChatModel.h; sourceTree = "<group>"; };
+		788A3B1C1C000BA5007C1028 /* LDChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDChatModel.m; sourceTree = "<group>"; };
 		789772291BFB0E4700C25D3F /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
 		7897722A1BFB0E4700C25D3F /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshAutoFooter.m; sourceTree = "<group>"; };
 		7897722B1BFB0E4700C25D3F /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBackFooter.h; sourceTree = "<group>"; };
@@ -286,8 +289,6 @@
 				60DFB3131AF8D77E00311D3A /* RegisterFirstViewController.m */,
 				60DFB3151AF8D7A300311D3A /* RegisterStepOneViewController.h */,
 				60DFB3161AF8D7A300311D3A /* RegisterStepOneViewController.m */,
-				60DFB3181AF8D7B200311D3A /* RegisterStepTwoViewController.h */,
-				60DFB3191AF8D7B200311D3A /* RegisterStepTwoViewController.m */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -408,6 +409,8 @@
 				605844151B86F1E300C925AC /* LDUserModel.m */,
 				78E576511BFF1CC5003A0515 /* LDListItemModel.h */,
 				78E576521BFF1CC5003A0515 /* LDListItemModel.m */,
+				788A3B1B1C000BA5007C1028 /* LDChatModel.h */,
+				788A3B1C1C000BA5007C1028 /* LDChatModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,17 +418,19 @@
 		60E6E24E1ADE46100026CDC3 /* NetClient */ = {
 			isa = PBXGroup;
 			children = (
+				60E6E3251ADE61B50026CDC3 /* ClientConfigure.h */,
 				60E6E31F1ADE5B8B0026CDC3 /* LDApiClient.h */,
 				60E6E3201ADE5B8B0026CDC3 /* LDApiClient.m */,
 				60E6E3221ADE5D520026CDC3 /* LDRequest.h */,
 				60E6E3231ADE5D520026CDC3 /* LDRequest.m */,
 				60B851791B72195200D37F3F /* LDUserRequest.h */,
 				60B8517A1B72195200D37F3F /* LDUserRequest.m */,
-				60E6E3251ADE61B50026CDC3 /* ClientConfigure.h */,
 				78E576481BFF01FD003A0515 /* LDListRequest.h */,
 				78E576491BFF01FD003A0515 /* LDListRequest.m */,
 				78E5764B1BFF0772003A0515 /* LDFriendRequest.h */,
 				78E5764C1BFF0772003A0515 /* LDFriendRequest.m */,
+				788A3B181C000A52007C1028 /* LDChatRequest.h */,
+				788A3B191C000A52007C1028 /* LDChatRequest.m */,
 			);
 			path = NetClient;
 			sourceTree = "<group>";
@@ -826,6 +831,7 @@
 				605844191B86F3C200C925AC /* LDFileManager.m in Sources */,
 				60E6E3361ADE65CA0026CDC3 /* MessageViewController.m in Sources */,
 				603071551B8C6CD8003EF934 /* MyVisitViewController.m in Sources */,
+				788A3B1D1C000BA5007C1028 /* LDChatModel.m in Sources */,
 				787516741BFB39DA008B624D /* HpLocationManager.m in Sources */,
 				7897725A1BFB0E4700C25D3F /* MJRefreshAutoNormalFooter.m in Sources */,
 				6030715A1B8C6CF1003EF934 /* MyFollowViewController.m in Sources */,
@@ -852,11 +858,11 @@
 				7897725C1BFB0E4700C25D3F /* MJRefreshBackGifFooter.m in Sources */,
 				789772541BFB0E4700C25D3F /* MJRefreshAutoFooter.m in Sources */,
 				78E5764D1BFF0772003A0515 /* LDFriendRequest.m in Sources */,
+				788A3B1A1C000A52007C1028 /* LDChatRequest.m in Sources */,
 				60A1F1831B8D8F4100365F93 /* LDTableViewManager.m in Sources */,
 				789772561BFB0E4700C25D3F /* MJRefreshComponent.m in Sources */,
 				7897725E1BFB0E4700C25D3F /* MJRefreshBackStateFooter.m in Sources */,
 				789772571BFB0E4700C25D3F /* MJRefreshFooter.m in Sources */,
-				60DFB31A1AF8D7B200311D3A /* RegisterStepTwoViewController.m in Sources */,
 				60E6E2251ADE383F0026CDC3 /* FirstViewController.m in Sources */,
 				60E6E2B61ADE46100026CDC3 /* NSDictionary+Additions.m in Sources */,
 				789772601BFB0E4700C25D3F /* MJRefreshNormalHeader.m in Sources */,

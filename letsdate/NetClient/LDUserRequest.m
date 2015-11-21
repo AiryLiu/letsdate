@@ -68,6 +68,11 @@
     }];
 }
 
-
+- (NSInteger)checkPay:(NSString *)userId payType:(NSString *)payType payCode:(NSString *)payCode
+           completion:(LDRequestCompletionBlock)completionBlock
+{
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:@{@"userid":userId, @"paytype":payType, @"paycode":payCode}];
+    return [self getFromPath:ACCOUNT_GET_ME_MESSAGE params:params completion:completionBlock];
+}
 
 @end

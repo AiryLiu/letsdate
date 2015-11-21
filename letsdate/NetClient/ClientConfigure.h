@@ -45,10 +45,14 @@ static NSString *const ACCOUNT_GET_AT_ME_LIST = @"/Account/GetAtMeList";// 关�
 
 static NSString *const ACCOUNT_GET_ME_AT_LIST = @"/Account/GetMeAtList";// 我的关注列表
 
-static NSString *const ACCOUNT_GET_CHAT_DETAILS = @"/Account/GetChatDetails";// 聊天详情
+static NSString *const ACCOUNT_GET_CHAT_DETAILS = @"/Account/GetInfoDetail";// 聊天详情
 
-static NSString *const ACCOUNT_GET_CHAT_LIST = @"/Account/GetChatList";// 聊天消息列表
+static NSString *const ACCOUNT_GET_CHAT_LIST = @"/Account/GetInfoList";// 聊天消息列表
 
 static NSString *const ACCOUNT_GET_NO_READ_COUNT = @"/Account/GetNoReadCount";// 未读消息数量
 
 static NSString *const ACCOUNT_SEND_ME_MESSAGE = @"/Account/SendMeMessage";// 聊天发送消息
+
+static NSString *const ACCOUNT_CHANGE_INFO_STATUS = @"/Account/ChangeInfoStatus";// 标记为已读
+
+static NSString *const ACCOUNT_CHECK_PAY = @"/Account/Checkpay";// 检查支付

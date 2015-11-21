@@ -73,3 +73,65 @@
 }
 
 @end
+
+
+@implementation LDVisitListItemModel
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super initWithDictionary:dict];
+    if (self) {
+        if ([dict[@"memessage"] isKindOfClass:[NSNull class]]) {
+            self.memessage = dict[@"memessage"];
+        }
+    }
+    return self;
+}
+
+- (NSDictionary *)toDictionary
+{
+    NSMutableDictionary * dictionary = [NSMutableDictionary dictionaryWithDictionary:[super toDictionary]];
+    if(self.memessage != nil){
+        dictionary[@"memessage"] = self.memessage;
+    }
+    return dictionary;
+}
+
+@end
+
+
+@implementation LDComeListItemModel
+
+- (instancetype)initWithDictionary:(NSDictionary *)dict
+{
+    self = [super initWithDictionary:dict];
+    if (self) {
+        if ([dict[@"age"] isKindOfClass:[NSNull class]]) {
+            self.age = dict[@"age"];
+        }
+        if ([dict[@"sex"] isKindOfClass:[NSNull class]]) {
+            self.sex = dict[@"sex"];
+        }
+        if ([dict[@"times"] isKindOfClass:[NSNull class]]) {
+            self.times = dict[@"times"];
+        }
+    }
+    return self;
+}
+
+- (NSDictionary *)toDictionary
+{
+    NSMutableDictionary * dictionary = [NSMutableDictionary dictionaryWithDictionary:[super toDictionary]];
+    if(self.age != nil){
+        dictionary[@"age"] = self.age;
+    }
+    if(self.sex != nil){
+        dictionary[@"sex"] = self.sex;
+    }
+    if(self.times != nil){
+        dictionary[@"times"] = self.times;
+    }
+    return dictionary;
+}
+
+@end

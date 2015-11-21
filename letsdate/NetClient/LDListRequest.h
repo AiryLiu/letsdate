@@ -15,4 +15,12 @@
 
 - (NSInteger)getBlackList:(NSString *)userId completion:(LDRequestCompletionBlock)completionBlock;
 
+- (NSInteger)latestVisitList:(NSString *)userId completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)getComeList:(NSString *)userId completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)getFollowMeList:(NSString *)userId completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)getMyFollowList:(NSString *)userId completion:(LDRequestCompletionBlock)completionBlock;
+
 @end

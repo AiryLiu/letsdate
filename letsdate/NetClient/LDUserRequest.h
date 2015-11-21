@@ -29,4 +29,7 @@
 
 - (NSInteger)getMyProfile:(NSString *)userId
                  completion:(LDRequestCompletionBlock)completionBlock;
+
+- (NSInteger)checkPay:(NSString *)userId payType:(NSString *)payType payCode:(NSString *)payCode
+               completion:(LDRequestCompletionBlock)completionBlock;
 @end

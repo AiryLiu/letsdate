@@ -112,10 +112,12 @@ static NSString *const sRegisterChoose = @"sRegisterChoose";
                 userId = [results objectForKey:@"userid"];
             }
             if (!userId) {
-                userId = @"1001";
+                [weakSelf.view hideHUDLoading];
+                [weakSelf.view showHUDMessage:@"注册失败" dismissAfter:2.0];
+            } else {
+                weakSelf.registerProfile.userid = userId;
+                [weakSelf queryLogin:weakSelf.registerProfile];
             }
-            weakSelf.registerProfile.userid = userId;
-            [weakSelf queryLogin:weakSelf.registerProfile];
             // TODO: query update user profile
             // [weakSelf queryUpdateProfile:];
         } else {
